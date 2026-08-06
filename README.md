@@ -1,25 +1,42 @@
-# 🔮 QuantumBitcoinPay Backend
+# QuantumBitcoinPay Backend
 
-> **Private repository** — QuantumBitcoinPay.com infrastructure, wallet builds, and presale backend.
-> **Owner:** 13th Chamber LLC | josephdougherty483@gmail.com | Wilmington, DE
-> **Related:** [QSAM Quantum Token Ecosystem](https://github.com/13thchamberllc/QSAM-quantum-token)
+Private backend services and release infrastructure for QuantumBitcoinPay.
+
+> Maintained by 13th Chamber LLC  
+> Repository: https://github.com/Mastercyril/QuantumBitcoinPay-backend
 
 ---
 
 ## Overview
 
-This repo is the private backend for [QuantumBitcoinPay.com](https://www.quantumbitcoinpay.com) — the presale and wallet distribution platform for the QSAM + QBTC ecosystem built by 13th Chamber LLC. It stores:
+This repository contains backend and operational assets used for:
 
-- Android APK & Windows Desktop wallet releases
-- Wix site backend / Velo code
-- Daily ecosystem runner scripts
-- QSAM & QBTC token configuration
-- SCORE encryption references
+- Wallet release distribution (Android / Windows)
+- Presale backend integrations
+- Ecosystem automation scripts
+- Token configuration files
+- Deployment and operational documentation
+
+---
+
+## Current Status
+
+**Launch status:** In preparation  
+**Environment:** Development / staging workflows configured  
+**Production:** Requires final infrastructure and compliance checks (see Launch Checklist)
 
 ---
 
 ## Repository Structure
 
+```text
+QuantumBitcoinPay-backend/
+├── .github/workflows/
+├── releases/
+├── ecosystem/
+├── wix-velo/
+├── token/
+└── docs/
 ```
 QuantumBitcoinPay-backend/
 ├── releases/
@@ -68,7 +85,7 @@ QSAM (Quantum Secured Asset Management) is a revolutionary token that rewards us
 |---|---|
 | **Name** | QSAM (Quantum Secured Asset Management) |
 | **Symbol** | QSAM |
-| **Current Value** | $0.0000001 USD per QSAM |
+| **Current Value** | $0.01 USD per QSAM |
 | **Blockchain** | Custom Quantum Blockchain (Proof of Quantum Work) |
 | **Consensus** | Proof of Quantum Work (PoQW) |
 | **Block Time** | Daily block creation with Merkle Tree verification |
