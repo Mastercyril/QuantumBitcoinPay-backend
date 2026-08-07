@@ -75,7 +75,20 @@ jobs:
         name: node-app
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
+    - name: Check Azure deployment configuration
+      id: azure-deploy-config
+      env:
+        AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      run: |
+        if [ "${AZURE_WEBAPP_NAME}" = "your-app-name" ] || [ -z "${AZURE_WEBAPP_PUBLISH_PROFILE}" ]; then
+          echo "configured=false" >> "$GITHUB_OUTPUT"
+          echo "Azure Web App deployment is not configured; skipping deploy."
+        else
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+        fi
+
     - name: Install production dependencies
+      if: steps.azure-deploy-config.outputs.configured == 'true'
       run: |
         if [ -f package.json ]; then
           npm install --omit=dev
@@ -86,6 +99,7 @@ jobs:
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
+      if: steps.azure-deploy-config.outputs.configured == 'true'
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
