@@ -78,7 +78,7 @@ jobs:
     - name: Install production dependencies
       run: |
         if [ -f package.json ]; then
-          npm ci --omit=dev
+          npm install --omit=dev
         else
           echo "No package.json found; skipping production dependency install."
         fi
