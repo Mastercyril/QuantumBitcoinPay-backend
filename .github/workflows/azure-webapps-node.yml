@@ -78,6 +78,7 @@ jobs:
     - name: Check Azure deployment configuration
       id: azure-deploy-config
       env:
+        AZURE_WEBAPP_NAME: ${{ env.AZURE_WEBAPP_NAME }}
         AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
       run: |
         if [ "${AZURE_WEBAPP_NAME}" = "your-app-name" ] || [ -z "${AZURE_WEBAPP_PUBLISH_PROFILE}" ]; then
