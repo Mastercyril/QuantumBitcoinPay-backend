@@ -78,7 +78,11 @@ jobs:
     - name: Install production dependencies
       run: |
         if [ -f package.json ]; then
-          npm install --omit=dev
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --omit=dev
+          else
+            npm install --omit=dev --no-package-lock
+          fi
         else
           echo "No package.json found; skipping production dependency install."
         fi
