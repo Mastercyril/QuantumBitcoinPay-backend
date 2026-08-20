@@ -1,0 +1,20 @@
+{
+  "name": "QBTC",
+  "symbol": "QBTC",
+  "description": "Quantum Bitcoin — post-quantum secured cryptocurrency on Solana. Phase 1 presale with 30% bonus. Backed by 13th Chamber LLC's quantum computing infrastructure and 50-claim patent portfolio.",
+  "image": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/qbtc-logo.png",
+  "external_url": "https://quantumbitcoinpay.com",
+  "attributes": [
+    {"trait_type": "Blockchain", "value": "Solana"},
+    {"trait_type": "Supply", "value": "21,000,000"},
+    {"trait_type": "Decimals", "value": "9"},
+    {"trait_type": "Price", "value": "$0.001"},
+    {"trait_type": "Phase", "value": "1 - Presale"},
+    {"trait_type": "Bonus", "value": "30%"},
+    {"trait_type": "Min Buy", "value": "$50"},
+    {"trait_type": "Category", "value": "Quantum Bitcoin"},
+    {"trait_type": "Founder", "value": "Joseph Cyril Dougherty IV"}
+  ],
+  "mint_address": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
+  "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff"
+}
