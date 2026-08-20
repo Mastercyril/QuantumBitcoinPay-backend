@@ -1,0 +1,30 @@
+{
+  "name": "QSAM",
+  "symbol": "QSAM",
+  "description": "Quantum State Amplitude Modulation — world's first quantum-native cryptocurrency powered by IBM Quantum hardware. 381x verified speedup, 50-claim patent portfolio, SCORE protocol with 50x fidelity improvement. Live on Solana mainnet.",
+  "image": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/qsam-logo.png",
+  "external_url": "https://quantumbitcoinpay.com",
+  "attributes": [
+    {"trait_type": "Blockchain", "value": "Solana"},
+    {"trait_type": "Supply", "value": "350,000,000"},
+    {"trait_type": "Decimals", "value": "9"},
+    {"trait_type": "Price", "value": "$0.01"},
+    {"trait_type": "Quantum Speedup", "value": "381x"},
+    {"trait_type": "Patent Claims", "value": "50"},
+    {"trait_type": "CHSH Parameter", "value": "2.781"},
+    {"trait_type": "Fidelity", "value": "99.73%"},
+    {"trait_type": "Category", "value": "Quantum Computing"},
+    {"trait_type": "Founder", "value": "Joseph Cyril Dougherty IV"}
+  ],
+  "properties": {
+    "files": [
+      {"uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/qsam-logo.png", "type": "image/png"}
+    ],
+    "category": "image",
+    "creators": [
+      {"address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff", "share": 100}
+    ]
+  },
+  "mint_address": "5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x",
+  "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff"
+}
