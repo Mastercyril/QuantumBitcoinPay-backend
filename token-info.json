@@ -1,0 +1,33 @@
+{
+  "qsam": {
+    "name": "QSAM",
+    "symbol": "QSAM",
+    "description": "Quantum State Amplitude Modulation token — world's first quantum-native cryptocurrency powered by IBM Quantum hardware with 381x verified speedup and 50-claim patent portfolio",
+    "blockchain": "Solana",
+    "mint_address": "5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x",
+    "supply": 350000000,
+    "decimals": 9,
+    "price": 0.01,
+    "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+    "website": "https://quantumbitcoinpay.com",
+    "github": "https://github.com/Mastercyril/QuantumBitcoinPay-backend",
+    "twitter": "@13thchamber",
+    "telegram": "https://t.me/quantumbitcoinpay",
+    "logo_uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png",
+    "categories": ["Quantum Computing", "DeFi", "Mining", "AI"]
+  },
+  "qbtc": {
+    "name": "QBTC",
+    "symbol": "QBTC",
+    "description": "Quantum Bitcoin — post-quantum secured cryptocurrency on Solana with Phase 1 presale offering 30% bonus",
+    "blockchain": "Solana",
+    "mint_address": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
+    "supply": 21000000,
+    "decimals": 9,
+    "price": 0.001,
+    "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+    "website": "https://quantumbitcoinpay.com",
+    "github": "https://github.com/Mastercyril/QuantumBitcoinPay-backend",
+    "categories": ["Quantum Computing", "Bitcoin", "Store of Value"]
+  }
+}
