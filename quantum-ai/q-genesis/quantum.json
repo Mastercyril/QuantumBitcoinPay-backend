@@ -1,0 +1,6 @@
+{
+  "backend": "ibm_brisbane",
+  "shots": 1024,
+  "optimization_level": 3,
+  "error_mitigation": true
+}
