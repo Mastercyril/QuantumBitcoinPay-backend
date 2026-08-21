@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum AI Terminal Bridge</title>
+    <style>
+        :root {
+            --bg-primary: #0b0b12;
+            --bg-elevated: #141422;
+            --bg-surface: #1a1a2e;
+            --text-primary: #e7e7f0;
+            --text-secondary: #a9a9bc;
+            --accent: #7c5cff;
+            --accent-glow: rgba(124, 92, 255, 0.5);
+            --success: #00d4ff;
+            --error: #ff4757;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .panel {
+            background: linear-gradient(180deg, rgba(20, 20, 34, 0.9), rgba(20, 20, 34, 0.5));
+            border: 1px solid rgba(124, 92, 255, 0.25);
+            border-radius: 16px;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .right-panel {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--error);
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.connected {
+            background: var(--success);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(124, 92, 255, 0.35);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), #5c3cff);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px var(--accent-glow);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .terminal {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(124, 92, 255, 0.35);
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+
+        .terminal-line.input {
+            color: var(--success);
+        }
+
+        .terminal-line.output {
+            color: var(--text-primary);
+        }
+
+        .terminal-line.error {
+            color: var(--error);
+        }
+
+        .terminal-line.system {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .command-history {
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .history-item {
+            padding: 5px;
+            margin-bottom: 5px;
+            background: rgba(124, 92, 255, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .history-item:hover {
+            background: rgba(124, 92, 255, 0.2);
+        }
+
+        .connection-info {
+            font-size: 12px;
+            padding: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .connection-info code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--success);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel panel">
+            <h2>⚛️ Quantum AI Control</h2>
+            
+            <div class="status-indicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Disconnected</span>
+            </div>
+
+            <div class="input-group">
+                <label>WebSocket Host</label>
+                <input type="text" id="wsHost" value="localhost" placeholder="localhost or IP">
+            </div>
+
+            <div class="input-group">
+                <label>WebSocket Port</label>
+                <input type="number" id="wsPort" value="8765" placeholder="8765">
+            </div>
+
+            <button id="connectBtn">Connect to Terminal</button>
+
+            <div class="input-group" style="margin-top: 20px;">
+                <label>Python Code</label>
+                <textarea id="codeInput" placeholder="import numpy as np&#10;print('Hello from Quantum AI')"></textarea>
+            </div>
+
+            <button id="executeBtn" disabled>Execute Code</button>
+            <button id="clearBtn" style="margin-top: 10px; background: rgba(255, 71, 87, 0.8);">Clear Terminal</button>
+
+            <div class="command-history" id="commandHistory" style="margin-top: 20px;">
+                <h3 style="font-size: 12px; margin-bottom: 10px;">Command History</h3>
+            </div>
+        </div>
+
+        <div class="right-panel panel">
+            <h2>🖥️ Terminal Output</h2>
+            <div class="terminal" id="terminal">
+                <div class="terminal-line system">Quantum AI Terminal Bridge v1.0</div>
+                <div class="terminal-line system">Created by Joseph Dougherty - 13th Chamber LLC</div>
+                <div class="terminal-line system">Ready to connect...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ws = null;
+        let commandHistory = [];
+
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const wsHostInput = document.getElementById('wsHost');
+        const wsPortInput = document.getElementById('wsPort');
+        const connectBtn = document.getElementById('connectBtn');
+        const executeBtn = document.getElementById('executeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const codeInput = document.getElementById('codeInput');
+        const terminal = document.getElementById('terminal');
+        const historyContainer = document.getElementById('commandHistory');
+
+        function addTerminalLine(text, type = 'output') {
+            const line = document.createElement('div');
+            line.className = `terminal-line ${type}`;
+            line.textContent = text;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function updateStatus(connected) {
+            if (connected) {
+                statusDot.classList.add('connected');
+                statusText.textContent = 'Connected';
+                connectBtn.textContent = 'Disconnect';
+                executeBtn.disabled = false;
+            } else {
+                statusDot.classList.remove('connected');
+                statusText.textContent = 'Disconnected';
+                connectBtn.textContent = 'Connect to Terminal';
+                executeBtn.disabled = true;
+            }
+        }
+
+        function addToHistory(code) {
+            commandHistory.unshift(code);
+            if (commandHistory.length > 10) commandHistory.pop();
+            
+            historyContainer.innerHTML = '<h3 style="font-size: 12px; margin-bottom: 10px;">Command History</h3>';
+            commandHistory.forEach((cmd, index) => {
+                const item = document.createElement('div');
+                item.className = 'history-item';
+                item.textContent = cmd.substring(0, 50) + (cmd.length > 50 ? '...' : '');
+                item.onclick = () => codeInput.value = cmd;
+                historyContainer.appendChild(item);
+            });
+        }
+
+        connectBtn.onclick = () => {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.close();
+                return;
+            }
+
+            const host = wsHostInput.value;
+            const port = wsPortInput.value;
+            const wsUrl = `ws://${host}:${port}`;
+
+            addTerminalLine(`Connecting to ${wsUrl}...`, 'system');
+
+            try {
+                ws = new WebSocket(wsUrl);
+
+                ws.onopen = () => {
+                    addTerminalLine('✓ Connected successfully!', 'system');
+                    updateStatus(true);
+                };
+
+                ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    
+                    if (data.type === 'output') {
+                        addTerminalLine(data.content, 'output');
+                    } else if (data.type === 'error') {
+                        addTerminalLine(`ERROR: ${data.content}`, 'error');
+                    } else if (data.type === 'success') {
+                        addTerminalLine(`✓ ${data.content}`, 'system');
+                    }
+                };
+
+                ws.onerror = (error) => {
+                    addTerminalLine('Connection error - check if backend server is running', 'error');
+                };
+
+                ws.onclose = () => {
+                    addTerminalLine('Disconnected from terminal', 'system');
+                    updateStatus(false);
+                };
+            } catch (error) {
+                addTerminalLine(`Failed to connect: ${error.message}`, 'error');
+            }
+        };
+
+        executeBtn.onclick = () => {
+            const code = codeInput.value.trim();
+            if (!code) {
+                addTerminalLine('No code to execute', 'error');
+                return;
+            }
+
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                addTerminalLine(`>>> Executing:`, 'input');
+                code.split('\n').forEach(line => addTerminalLine(line, 'input'));
+                
+                ws.send(JSON.stringify({
+                    type: 'execute',
+                    code: code
+                }));
+
+                addToHistory(code);
+            } else {
+                addTerminalLine('Not connected to terminal', 'error');
+            }
+        };
+
+        clearBtn.onclick = () => {
+            terminal.innerHTML = '';
+            addTerminalLine('Terminal cleared', 'system');
+        };
+
+        // Execute on Enter (Ctrl+Enter for multiline)
+        codeInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                executeBtn.click();
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
