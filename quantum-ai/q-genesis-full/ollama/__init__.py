@@ -1,0 +1,1 @@
+# Q.GENESIS - ollama module
