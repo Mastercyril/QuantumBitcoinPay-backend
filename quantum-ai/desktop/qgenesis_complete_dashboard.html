@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.GENESIS - Quantum AI Dashboard</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0a15 0%, #1a0b2e 50%, #0f0520 100%);
+            color: #e7e7f0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #7c5cff;
+            box-shadow: 0 5px 30px rgba(124, 92, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 56px;
+            color: #ffd700;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 215, 0, 0.4);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .header .subtitle {
+            color: #a9a9bc;
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .header .creator {
+            color: #7c5cff;
+            font-size: 14px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 320px 1fr 380px;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: rgba(20, 20, 34, 0.95);
+            border: 1px solid rgba(124, 92, 255, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            height: fit-content;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .panel::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .panel::-webkit-scrollbar-thumb {
+            background: #7c5cff;
+            border-radius: 10px;
+        }
+
+        .panel h2 {
+            color: #00d4ff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border-left: 3px solid #7c5cff;
+        }
+
+        .status-label {
+            color: #a9a9bc;
+            font-size: 14px;
+        }
+
+        .status-value {
+            color: #00ff88;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .status-value.connecting {
+            color: #ffaa00;
+        }
+
+        .status-value.error {
+            color: #ff4444;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #7c5cff 0%, #5c3cff 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 92, 255, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(124, 92, 255, 0.6);
+            background: linear-gradient(135deg, #8c6cff 0%, #6c4cff 100%);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button.listening {
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(255, 68, 68, 0.8); }
+        }
+
+        .drop-zone {
+            border: 3px dashed #7c5cff;
+            border-radius: 16px;
+            padding: 50px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(124, 92, 255, 0.05);
+            margin: 15px 0;
+        }
+
+        .drop-zone:hover {
+            background: rgba(124, 92, 255, 0.15);
+            border-color: #00d4ff;
+            transform: scale(1.02);
+        }
+
+        .drop-zone.dragover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00ff88;
+        }
+
+        .drop-zone-icon {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+
+        .drop-zone-text {
+            color: #a9a9bc;
+            font-size: 16px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(124, 92, 255, 0.4);
+            border-radius: 10px;
+            color: #e7e7f0;
+            font-family: inherit;
+            font-size: 14px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        #chat {
+            min-height: 400px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .chat-message {
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 8px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-user {
+            background: rgba(124, 92, 255, 0.2);
+            border-left: 3px solid #7c5cff;
+        }
+
+        .chat-q {
+            background: rgba(0, 212, 255, 0.2);
+            border-left: 3px solid #00d4ff;
+        }
+
+        .chat-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .chat-user .chat-label {
+            color: #7c5cff;
+        }
+
+        .chat-q .chat-label {
+            color: #00d4ff;
+        }
+
+        .chat-text {
+            color: #e7e7f0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .file-item {
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #00d4ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        .file-name {
+            color: #e7e7f0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .file-size {
+            color: #a9a9bc;
+            font-size: 11px;
+        }
+
+        .waveform {
+            display: none;
+            height: 60px;
+            margin: 15px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waveform.active {
+            display: block;
+        }
+
+        .waveform-bar {
+            position: absolute;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to top, #7c5cff, #00d4ff);
+            animation: wave 1s infinite ease-in-out;
+            border-radius: 2px 2px 0 0;
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 20%; }
+            50% { height: 80%; }
+        }
+
+        .module-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 5px;
+            background: rgba(0, 255, 136, 0.2);
+            border: 1px solid #00ff88;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #00ff88;
+        }
+
+        .connection-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            background: #ff4444;
+            box-shadow: 0 0 10px #ff4444;
+        }
+
+        .connection-status.connected {
+            background: #00ff88;
+            box-shadow: 0 0 15px #00ff88;
+        }
+
+        @media (max-width: 1400px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚛️ Q.GENESIS</h1>
+        <div class="subtitle">Quantum AI System v2.0</div>
+        <div class="creator">Created by Joseph Dougherty | 13th Chamber LLC</div>
+    </div>
+
+    <div class="container">
+        <!-- Left Panel: System Status -->
+        <div class="panel">
+            <h2>⚙️ System Status</h2>
+
+            <div class="status-item">
+                <span class="status-label">Connection</span>
+                <span class="status-value connecting" id="connectionStatus">
+                    <span class="connection-status" id="connectionDot"></span>
+                    Connecting...
+                </span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Files Loaded</span>
+                <span class="status-value" id="fileCount">0</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Voice Status</span>
+                <span class="status-value" id="voiceStatus">Ready</span>
+            </div>
+
+            <div class="status-item">
+                <span class="status-label">Messages</span>
+                <span class="status-value" id="messageCount">0</span>
+            </div>
+
+            <h2 style="margin-top: 30px;">🧠 Active Modules</h2>
+            <div style="margin-top: 15px;">
+                <span class="module-badge">Quantum Core</span>
+                <span class="module-badge">Ollama AI</span>
+                <span class="module-badge">Memory</span>
+                <span class="module-badge">Knowledge</span>
+                <span class="module-badge">Voice Engine</span>
+                <span class="module-badge">Task Manager</span>
+            </div>
+
+            <button onclick="location.reload()" style="margin-top: 30px;">🔄 Refresh System</button>
+            <button onclick="clearChat()">🗑️ Clear Chat</button>
+        </div>
+
+        <!-- Center Panel: Chat Interface -->
+        <div class="panel">
+            <h2>💬 Quantum Chat</h2>
+
+            <div class="waveform" id="waveform">
+                <div class="waveform-bar" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="waveform-bar" style="left: 20%; animation-delay: 0.1s;"></div>
+                <div class="waveform-bar" style="left: 30%; animation-delay: 0.2s;"></div>
+                <div class="waveform-bar" style="left: 40%; animation-delay: 0.3s;"></div>
+                <div class="waveform-bar" style="left: 50%; animation-delay: 0.4s;"></div>
+                <div class="waveform-bar" style="left: 60%; animation-delay: 0.3s;"></div>
+                <div class="waveform-bar" style="left: 70%; animation-delay: 0.2s;"></div>
+                <div class="waveform-bar" style="left: 80%; animation-delay: 0.1s;"></div>
+                <div class="waveform-bar" style="left: 90%; animation-delay: 0s;"></div>
+            </div>
+
+            <div id="chat"></div>
+
+            <input type="text" id="chatInput" placeholder="Type your message to Q..." />
+
+            <button id="voiceBtn" onclick="toggleVoice()">🎤 Start Voice Mode</button>
+        </div>
+
+        <!-- Right Panel: File Upload -->
+        <div class="panel">
+            <h2>📁 Knowledge Base</h2>
+
+            <div class="drop-zone" id="dropZone">
+                <div class="drop-zone-icon">📤</div>
+                <div class="drop-zone-text">
+                    <strong>Drag & Drop Files Here</strong><br>
+                    or click to browse
+                </div>
+                <input type="file" id="fileInput" multiple style="display: none;">
+            </div>
+
+            <h3 style="color: #7c5cff; margin: 20px 0 10px 0; font-size: 16px;">📚 Uploaded Files</h3>
+            <div id="fileList"></div>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket connection
+        let socket;
+        let isListening = false;
+        let recognition;
+        let messageCount = 0;
+
+        // Initialize
+        function init() {
+            // Connect to WebSocket
+            try {
+                socket = io('http://localhost:5000');
+
+                socket.on('connect', () => {
+                    updateStatus('Connected ✓', true);
+                    addChatMessage('system', 'Connected to Q.GENESIS successfully!');
+                });
+
+                socket.on('disconnect', () => {
+                    updateStatus('Disconnected', false);
+                });
+
+                socket.on('q_response', (data) => {
+                    addChatMessage('q', data.text);
+                });
+
+                socket.on('file_processed', (data) => {
+                    if (data.success) {
+                        addFileToList(data.filename, data.size);
+                        updateFileCount();
+                    }
+                });
+            } catch (e) {
+                updateStatus('Offline Mode', false);
+                addChatMessage('system', 'Running in offline mode. Start Q.GENESIS server to enable full features.');
+            }
+
+            // Setup file upload
+            setupFileUpload();
+
+            // Setup chat input
+            document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && e.target.value.trim()) {
+                    sendMessage(e.target.value);
+                    e.target.value = '';
+                }
+            });
+
+            // Setup voice recognition
+            setupVoiceRecognition();
+        }
+
+        function updateStatus(text, connected) {
+            const statusEl = document.getElementById('connectionStatus');
+            const dotEl = document.getElementById('connectionDot');
+            statusEl.innerHTML = '<span class="connection-status' + (connected ? ' connected' : '') + '"></span>' + text;
+            statusEl.className = 'status-value' + (connected ? '' : ' connecting');
+        }
+
+        function addChatMessage(type, text) {
+            const chat = document.getElementById('chat');
+            const msg = document.createElement('div');
+            msg.className = 'chat-message chat-' + type;
+
+            let label = type === 'user' ? 'You' : type === 'q' ? 'Q.GENESIS' : 'System';
+
+            msg.innerHTML = `
+                <div class="chat-label">${label}</div>
+                <div class="chat-text">${text}</div>
+            `;
+
+            chat.appendChild(msg);
+            chat.scrollTop = chat.scrollHeight;
+
+            messageCount++;
+            document.getElementById('messageCount').textContent = messageCount;
+        }
+
+        function sendMessage(text) {
+            addChatMessage('user', text);
+
+            if (socket && socket.connected) {
+                fetch('http://localhost:5000/api/query', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({query: text})
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        addChatMessage('q', data.response);
+                    }
+                })
+                .catch(e => {
+                    addChatMessage('system', 'Error: Cannot reach Q.GENESIS server');
+                });
+            } else {
+                addChatMessage('q', 'I received your message: "' + text + '". Please start the Q.GENESIS server for full AI processing.');
+            }
+        }
+
+        function setupFileUpload() {
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('fileInput');
+
+            dropZone.onclick = () => fileInput.click();
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('http://localhost:5000/api/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        addFileToList(data.filename, data.size);
+                        updateFileCount();
+                        addChatMessage('system', `File uploaded: ${data.filename}`);
+                    } else {
+                        addChatMessage('system', `Upload failed: ${data.error}`);
+                    }
+                })
+                .catch(e => {
+                    addChatMessage('system', 'Upload error: Server not reachable');
+                });
+            });
+        }
+
+        function addFileToList(filename, size) {
+            const fileList = document.getElementById('fileList');
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+
+            const sizeKB = (size / 1024).toFixed(1);
+
+            fileItem.innerHTML = `
+                <div>
+                    <div class="file-name">📄 ${filename}</div>
+                    <div class="file-size">${sizeKB} KB</div>
+                </div>
+            `;
+
+            fileList.appendChild(fileItem);
+        }
+
+        function updateFileCount() {
+            const count = document.getElementById('fileList').children.length;
+            document.getElementById('fileCount').textContent = count;
+        }
+
+        function setupVoiceRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+
+                recognition.onresult = (event) => {
+                    const last = event.results.length - 1;
+                    const text = event.results[last][0].transcript;
+
+                    if (event.results[last].isFinal) {
+                        sendMessage(text);
+                    }
+                };
+
+                recognition.onerror = (event) => {
+                    console.error('Speech recognition error:', event.error);
+                    stopVoice();
+                };
+            }
+        }
+
+        function toggleVoice() {
+            if (isListening) {
+                stopVoice();
+            } else {
+                startVoice();
+            }
+        }
+
+        function startVoice() {
+            if (recognition) {
+                recognition.start();
+                isListening = true;
+                document.getElementById('voiceBtn').textContent = '⏹️ Stop Voice Mode';
+                document.getElementById('voiceBtn').classList.add('listening');
+                document.getElementById('voiceStatus').textContent = 'Listening...';
+                document.getElementById('waveform').classList.add('active');
+                addChatMessage('system', '🎤 Voice mode activated. Start speaking...');
+            } else {
+                addChatMessage('system', 'Voice recognition not supported in this browser');
+            }
+        }
+
+        function stopVoice() {
+            if (recognition && isListening) {
+                recognition.stop();
+                isListening = false;
+                document.getElementById('voiceBtn').textContent = '🎤 Start Voice Mode';
+                document.getElementById('voiceBtn').classList.remove('listening');
+                document.getElementById('voiceStatus').textContent = 'Ready';
+                document.getElementById('waveform').classList.remove('active');
+                addChatMessage('system', 'Voice mode deactivated');
+            }
+        }
+
+        function clearChat() {
+            document.getElementById('chat').innerHTML = '';
+            messageCount = 0;
+            document.getElementById('messageCount').textContent = '0';
+            addChatMessage('system', 'Chat cleared');
+        }
+
+        // Initialize on load
+        window.onload = init;
+    </script>
+</body>
+</html>
