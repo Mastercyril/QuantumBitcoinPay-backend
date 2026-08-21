@@ -1,0 +1,42 @@
+from flask import Flask, request, jsonify
+import json
+
+app = Flask(__name__)
+
+# Store game state/commands
+game_commands = []
+game_state = {}
+
+@app.route('/')
+def index():
+    return "Roblox Bridge Active"
+
+# Roblox sends data to Python
+@app.route('/to_python', methods=['POST'])
+def receive_from_roblox():
+    data = request.get_json()
+    print("RECEIVED FROM ROBLOX >>", data)
+    # Process the data here
+    game_state.update(data)
+    return jsonify({"status": "received", "data": data})
+
+# Roblox gets commands from Python
+@app.route('/from_python', methods=['GET'])
+def send_to_roblox():
+    # Send Lua code or game commands to Roblox
+    if game_commands:
+        command = game_commands.pop(0)
+        print("SENT TO ROBLOX >>", command)
+        return jsonify(command)
+    return jsonify({"command": "none"})
+
+# Add commands via Python (you can call this from your code)
+@app.route('/add_command', methods=['POST'])
+def add_command():
+    command = request.get_json()
+    game_commands.append(command)
+    return jsonify({"status": "command added"})
+
+# Run server on port 8080 (you can use any port above 1024)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
