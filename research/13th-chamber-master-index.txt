@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": 400,
+    "message": "The requested conversion is not supported.",
+    "errors": [
+      {
+        "message": "The requested conversion is not supported.",
+        "domain": "global",
+        "reason": "badRequest",
+        "location": "convertTo",
+        "locationType": "parameter"
+      }
+    ]
+  }
+}
