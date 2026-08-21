@@ -1,0 +1,67 @@
+import os
+import json
+from pathlib import Path
+from datetime import datetime
+
+base_dir = Path("C:/QuantumAI")
+onedrive_dir = Path("C:/Users/josep/OneDrive/quantum Ai")
+gdrive_dir = Path("C:/Users/josep/Google Drive/quantum Ai")
+
+print("Initializing configuration...")
+
+# System config
+system_config = {
+    "version": "1.0.0",
+    "installed_date": str(datetime.now()),
+    "user": "Joseph Dougherty",
+    "base_directory": str(base_dir)
+}
+
+with open(base_dir / "config" / "system_config.json", "w") as f:
+    json.dump(system_config, f, indent=4)
+print("✓ Created: system_config.json")
+
+# Cloud paths
+cloud_paths = {
+    "onedrive": {
+        "memory_backup": str(onedrive_dir / "memory_backup"),
+        "learning_data": str(onedrive_dir / "learning_data")
+    },
+    "google_drive": {
+        "memory_backup": str(gdrive_dir / "memory_backup"),
+        "learning_data": str(gdrive_dir / "learning_data")
+    }
+}
+
+with open(base_dir / "config" / "cloud_paths.json", "w") as f:
+    json.dump(cloud_paths, f, indent=4)
+print("✓ Created: cloud_paths.json")
+
+# Memory config
+memory_config = {
+    "local_storage": str(base_dir / "storage" / "local_memory"),
+    "backup_enabled": True,
+    "sync_interval": 300
+}
+
+with open(base_dir / "config" / "memory_config.json", "w") as f:
+    json.dump(memory_config, f, indent=4)
+print("✓ Created: memory_config.json")
+
+# Initialize empty databases
+empty_db = {"memories": [], "last_updated": str(datetime.now())}
+
+with open(base_dir / "storage" / "local_memory" / "memory_database.json", "w") as f:
+    json.dump(empty_db, f, indent=4)
+print("✓ Created: memory_database.json")
+
+with open(base_dir / "storage" / "learned_knowledge" / "learning_database.json", "w") as f:
+    json.dump(empty_db, f, indent=4)
+print("✓ Created: learning_database.json")
+
+print("\n✓ CONFIGURATION COMPLETE ✓")
+print("\nNext steps:")
+print("1. pip install requests")
+print("2. cd C:\\QuantumAI")
+print("3. python QuantumAI.py")
+
