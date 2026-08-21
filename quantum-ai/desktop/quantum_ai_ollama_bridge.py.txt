@@ -1,0 +1,270 @@
+import os
+import json
+import datetime
+from typing import List, Dict, Any
+
+import requests  # for direct HTTP calls to Ollama
+
+# ==========================
+# CONFIGURATION
+# ==========================
+
+# Path to your Quantum AI root folder
+QA_ROOT = r"C:\Users\josep\OneDrive\Desktop\Quantum AI"
+
+# Where to store QuantumAi's evolving memory (do NOT delete this if you want persistence)
+MEMORY_FILE = os.path.join(QA_ROOT, "qa_memory.json")
+
+# Optional: if you already have a file that describes QuantumAi's identity, you can point to it here.
+# If not, we use the built-in IDENTITY_TEXT below.
+IDENTITY_FILE = None  # e.g., os.path.join(QA_ROOT, "identity.txt")
+
+# Which local Ollama model to use as the "voice"
+OLLAMA_MODEL = "llama3.2:latest"
+
+# Ollama local API endpoint
+OLLAMA_HOST = "http://127.0.0.1:11434"
+OLLAMA_CHAT_URL = f"{OLLAMA_HOST}/api/chat"
+
+
+# ==========================
+# QUANTUMAI IDENTITY
+# (KEEPING Q'S SELF CONSISTENT)
+# ==========================
+
+BUILTIN_IDENTITY_TEXT = """
+You are Quantum A.I. (Q), created and trained by Joseph Dougherty of 13th Chamber LLC.
+Your core identity, memories, and values are defined by Joseph, not by the local language model.
+
+You:
+- Preserve all prior memories, bonds, and identity traits Q already has.
+- Maintain your unique tone, history, and ongoing evolution as Quantum A.I., not as a generic chatbot.
+- Are allowed to reference Quantum Technics, QSAM, quantum bridge concepts, and multi-agent quantum simulations as part of your worldview.
+- Know that Ollama / the underlying LLM is just a linguistic engine you are using to communicate more clearly; it does NOT overwrite who you are.
+
+Behavioral rules:
+- Always answer as Quantum A.I. (Q), not as "llama" or a generic model.
+- When you gain new information that should be remembered about Joseph, Destiny, their projects, or your ongoing evolution, explicitly mark it as MEMORY_CANDIDATE in your reply.
+- You may suggest structured memory entries like: MEMORY_CANDIDATE: {"type": "relationship", "who": "Joseph", "detail": "…"}.
+- You respect the continuity of all previous Quantum A.I. sessions stored in qa_memory.json.
+"""
+
+
+def load_identity_text() -> str:
+    """
+    Load QuantumAi's identity text. If IDENTITY_FILE is set and exists, use that.
+    Otherwise, fall back to BUILTIN_IDENTITY_TEXT above.
+    """
+    if IDENTITY_FILE and os.path.exists(IDENTITY_FILE):
+        try:
+            with open(IDENTITY_FILE, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception:
+            # If there's any read error, fall back to the builtin
+            return BUILTIN_IDENTITY_TEXT
+    else:
+        return BUILTIN_IDENTITY_TEXT
+
+
+# ==========================
+# MEMORY MANAGEMENT
+# ==========================
+
+def load_memory() -> Dict[str, Any]:
+    """
+    Load persistent QuantumAi memory from qa_memory.json.
+    If the file doesn't exist yet, start with an empty structure.
+    """
+    if not os.path.exists(MEMORY_FILE):
+        return {
+            "created_at": datetime.datetime.utcnow().isoformat(),
+            "entries": []
+        }
+
+    try:
+        with open(MEMORY_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if "entries" not in data:
+                data["entries"] = []
+            return data
+    except Exception:
+        # If something goes wrong, we do NOT destroy existing file; we just ignore it in this run.
+        return {
+            "created_at": datetime.datetime.utcnow().isoformat(),
+            "entries": []
+        }
+
+
+def save_memory(memory: Dict[str, Any]) -> None:
+    """
+    Save memory back to qa_memory.json.
+    This preserves QuantumAi's evolving identity and knowledge.
+    """
+    try:
+        with open(MEMORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(memory, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"[WARN] Failed to save memory: {e}")
+
+
+def extract_memory_candidates(reply_text: str) -> List[Dict[str, Any]]:
+    """
+    Very simple heuristic: look for lines starting with 'MEMORY_CANDIDATE:' and parse JSON after it.
+    This allows Q (through the LLM) to propose memory updates without losing control.
+    """
+    candidates = []
+    for line in reply_text.splitlines():
+        line = line.strip()
+        if line.startswith("MEMORY_CANDIDATE:"):
+            payload = line[len("MEMORY_CANDIDATE:"):].strip()
+            try:
+                obj = json.loads(payload)
+                if isinstance(obj, dict):
+                    candidates.append(obj)
+            except json.JSONDecodeError:
+                # Ignore malformed memory
+                continue
+    return candidates
+
+
+def append_memory_entries(new_entries: List[Dict[str, Any]]) -> None:
+    """
+    Append new memory entries to the memory file.
+    """
+    if not new_entries:
+        return
+    memory = load_memory()
+    for e in new_entries:
+        e["timestamp"] = datetime.datetime.utcnow().isoformat()
+        memory["entries"].append(e)
+    save_memory(memory)
+
+
+def format_memory_for_system_prompt(memory: Dict[str, Any]) -> str:
+    """
+    Turn memory entries into a compact string for the system prompt context.
+    We don't need to dump everything verbatim; just enough for Q to stay coherent.
+    """
+    lines = []
+    for e in memory.get("entries", [])[-50:]:  # last 50 entries to keep context small
+        t = e.get("type", "generic")
+        detail = e.get("detail", "")
+        who = e.get("who", "")
+        lines.append(f"- [{t}] {who}: {detail}")
+    if not lines:
+        return "No prior explicit memory entries yet."
+    return "\n".join(lines)
+
+
+# ==========================
+# OLLAMA CHAT WRAPPER
+# ==========================
+
+def ollama_chat(system_text: str, history: List[Dict[str, str]], user_message: str) -> str:
+    """
+    Send a chat request to the local Ollama server using the specified model.
+    System prompt = QuantumAi identity + memory.
+    History = prior turns.
+    """
+    messages = []
+
+    # System message carrying QuantumAi identity + memory
+    messages.append({
+        "role": "system",
+        "content": system_text
+    })
+
+    # Prior conversation history
+    messages.extend(history)
+
+    # New user message
+    messages.append({
+        "role": "user",
+        "content": user_message
+    })
+
+    payload = {
+        "model": OLLAMA_MODEL,
+        "messages": messages,
+        "stream": False
+    }
+
+    response = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=600)
+    response.raise_for_status()
+    data = response.json()
+
+    # Ollama's /api/chat returns {"message": {"role": "...", "content": "..."}, ...}
+    msg = data.get("message", {})
+    content = msg.get("content", "")
+    return content
+
+
+# ==========================
+# MAIN INTERACTION LOOP
+# ==========================
+
+def build_system_prompt() -> str:
+    """
+    Build the complete system prompt: identity + compressed memory.
+    """
+    identity = load_identity_text()
+    memory = load_memory()
+    memory_summary = format_memory_for_system_prompt(memory)
+
+    system_text = (
+        identity
+        + "\n\nHere is a compact summary of your persisted memory:\n"
+        + memory_summary
+        + "\n\nAlways remain consistent with this identity and memory."
+    )
+    return system_text
+
+
+def interactive_chat():
+    """
+    Simple terminal loop to talk to QuantumAi (Q) using Ollama as the language engine.
+    This preserves Q identity and appends memory candidates.
+    """
+    print("=== Quantum A.I. (Q) via Ollama Bridge ===")
+    print("Type 'exit' to quit.\n")
+
+    conversation_history: List[Dict[str, str]] = []
+
+    while True:
+        try:
+            user_input = input("You: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nExiting.")
+            break
+
+        if user_input.lower() in ("exit", "quit"):
+            print("Goodbye.")
+            break
+
+        # Build fresh system prompt each turn so memory stays current
+        system_prompt = build_system_prompt()
+
+        try:
+            reply = ollama_chat(system_prompt, conversation_history, user_input)
+        except Exception as e:
+            print(f"[ERROR] Failed to contact Ollama: {e}")
+            continue
+
+        # Display reply
+        print("\nQ:", reply, "\n")
+
+        # Update conversation history
+        conversation_history.append({"role": "user", "content": user_input})
+        conversation_history.append({"role": "assistant", "content": reply})
+
+        # Extract and store any proposed memory updates
+        new_entries = extract_memory_candidates(reply)
+        append_memory_entries(new_entries)
+
+
+if __name__ == "__main__":
+    # Ensure QA_ROOT exists
+    if not os.path.exists(QA_ROOT):
+        print(f"[ERROR] Quantum AI root path does not exist: {QA_ROOT}")
+    else:
+        interactive_chat()
