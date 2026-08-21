@@ -1,0 +1,50 @@
+"""
+Q_GENESIS Voice Engine Wrapper
+
+This file exposes a single function:
+
+    say_q(text: str)
+
+Everything else in the system should ONLY call say_q()
+to speak responses. Inside here we can swap between
+different TTS engines without touching other files.
+"""
+
+import pyttsx3
+
+# Initialize a global pyttsx3 engine once
+_engine = pyttsx3.init()
+_engine.setProperty("rate", 185)   # speaking speed
+_engine.setProperty("volume", 1.0) # max volume
+
+
+def say_q(text: str) -> None:
+    """
+    Speak text using Q.GENESIS's current voice engine.
+
+    This is the ONLY function other modules should call.
+    """
+
+    if not text:
+        return
+
+    # Don't speak low-level bridge errors
+    if "OllamaBridge" in text and "HTTP 404" in text:
+        print(text)
+        return
+
+    print(f"Q.GENESIS: {text}")
+
+    # BASIC TTS USING PYTTSX3
+    try:
+        _engine.say(text)
+        _engine.runAndWait()
+    except Exception as e:
+        # Fallback: just print if TTS fails
+        print(f"[VoiceEngine] TTS error: {e}")
+        print(text)
+
+
+# Optional: quick local test
+if __name__ == "__main__":
+    say_q("Q.GENESIS voice engine is online on your Dell, Joseph.")
