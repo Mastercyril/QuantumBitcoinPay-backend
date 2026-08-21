@@ -1,0 +1,62 @@
+import asyncio
+import websockets
+import speech_recognition as sr
+import pyttsx3
+import json
+
+# Text-to-speech
+tts = pyttsx3.init()
+tts.setProperty("rate", 185)   # tweak speed
+tts.setProperty("volume", 1.0) # full volume
+
+def speak(text: str):
+    print(f"Q.GENESIS: {text}")
+    tts.say(text)
+    tts.runAndWait()
+
+# Speech-to-text
+recognizer = sr.Recognizer()
+mic = sr.Microphone()
+
+async def talk_loop():
+    uri = "ws://localhost:8765"  # your terminal bridge
+    async with websockets.connect(uri) as ws:
+        speak("Voice link online. You can start talking, Joseph.")
+        while True:
+            # Listen from mic
+            with mic as source:
+                print("\nListening... (say 'goodbye Q' to stop)")
+                recognizer.adjust_for_ambient_noise(source, duration=0.5)
+                audio = recognizer.listen(source)
+
+            try:
+                user_text = recognizer.recognize_google(audio)
+            except Exception as e:
+                print(f"[Voice error] {e}")
+                continue
+
+            user_text = user_text.strip()
+            if not user_text:
+                continue
+
+            print(f"You: {user_text}")
+
+            if "goodbye q" in user_text.lower() or "goodbye cue" in user_text.lower():
+                speak("Shutting down voice loop. See you soon.")
+                break
+
+            # Send text to Q via the terminal bridge
+            await ws.send(json.dumps({"type": "chat", "text": user_text}))
+            resp_raw = await ws.recv()
+
+            # Bridge may send plain text or JSON with 'text'
+            try:
+                data = json.loads(resp_raw)
+                reply = data.get("text", resp_raw)
+            except Exception:
+                reply = resp_raw
+
+            speak(reply)
+
+if __name__ == "__main__":
+    asyncio.run(talk_loop())
