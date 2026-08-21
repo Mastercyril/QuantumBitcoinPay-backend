@@ -1,0 +1,42 @@
+2026-03-23 00:07:13,896 - INFO - Q.GENESIS v1.0.0 initialized
+2026-03-23 00:07:13,928 - INFO - Module registered: quantum
+2026-03-23 00:07:14,846 - INFO - Module registered: ollama
+2026-03-23 00:07:14,878 - INFO - Module registered: memory
+2026-03-23 00:07:14,894 - INFO - Module registered: knowledge
+2026-03-23 00:07:15,347 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\josep\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-23 00:07:15,347 - INFO - Using writeable comtypes cache directory: 'C:\Users\josep\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtypes\gen'
+2026-03-23 00:07:15,721 - INFO - Module registered: voice
+2026-03-23 00:07:15,726 - INFO - Module registered: tasks
+2026-03-23 00:07:16,234 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.105:5000
+2026-03-23 00:07:16,234 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-23 00:11:02,953 - INFO - Q.GENESIS v1.0.0 initialized
+2026-03-23 00:11:02,959 - INFO - Module registered: quantum
+2026-03-23 00:11:03,132 - INFO - Module registered: ollama
+2026-03-23 00:11:03,132 - INFO - Module registered: memory
+2026-03-23 00:11:03,132 - INFO - Module registered: knowledge
+2026-03-23 00:11:03,211 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\josep\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-23 00:11:03,211 - INFO - Using writeable comtypes cache directory: 'C:\Users\josep\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtypes\gen'
+2026-03-23 00:11:03,311 - INFO - Module registered: voice
+2026-03-23 00:11:03,311 - INFO - Module registered: tasks
+2026-03-23 00:11:03,441 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.105:5000
+2026-03-23 00:11:03,441 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-23 01:37:07,956 - INFO - Q.GENESIS v1.0.0 initialized
+2026-03-23 01:37:07,986 - INFO - Module registered: quantum
+2026-03-23 01:37:08,738 - INFO - Module registered: ollama
+2026-03-23 01:37:08,747 - INFO - Module registered: memory
+2026-03-23 01:37:08,752 - INFO - Module registered: knowledge
+2026-03-23 01:37:09,115 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\josep\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-23 01:37:09,115 - INFO - Using writeable comtypes cache directory: 'C:\Users\josep\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtypes\gen'
+2026-03-23 01:37:09,757 - INFO - Module registered: voice
+2026-03-23 01:37:09,766 - INFO - Module registered: tasks
+2026-03-23 01:37:11,288 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.105:5000
+2026-03-23 01:37:11,288 - INFO - [33mPress CTRL+C to quit[0m
