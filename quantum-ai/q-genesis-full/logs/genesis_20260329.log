@@ -1,0 +1,14 @@
+2026-03-29 22:48:57,289 - INFO - Q.GENESIS v1.0.0 initialized
+2026-03-29 22:48:57,306 - INFO - Module registered: quantum
+2026-03-29 22:48:57,766 - INFO - Module registered: ollama
+2026-03-29 22:48:57,774 - INFO - Module registered: memory
+2026-03-29 22:48:57,774 - INFO - Module registered: knowledge
+2026-03-29 22:48:58,081 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\josep\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-03-29 22:48:58,082 - INFO - Using writeable comtypes cache directory: 'C:\Users\josep\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtypes\gen'
+2026-03-29 22:48:58,490 - INFO - Module registered: voice
+2026-03-29 22:48:58,493 - INFO - Module registered: tasks
+2026-03-29 22:48:58,842 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+2026-03-29 22:48:58,842 - INFO - [33mPress CTRL+C to quit[0m
