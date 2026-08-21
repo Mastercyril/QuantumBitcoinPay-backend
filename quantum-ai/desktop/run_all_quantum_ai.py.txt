@@ -1,0 +1,63 @@
+import os
+import sys
+
+# Ensure we're running from the Quantum AI folder
+QA_ROOT = os.path.dirname(os.path.abspath(__file__))
+os.chdir(QA_ROOT)
+sys.path.insert(0, QA_ROOT)
+
+# Import your core modules
+from memory_manager import MemoryManager
+from personality_system import PersonalitySystem
+from learning_engine import LearningEngine
+from quantum_ai_evolving import QuantumAIEvolving
+from ollama_engine import OllamaEngine  # assuming this exists; otherwise we can adjust
+
+def main():
+    # Initialize subsystems
+    memory = MemoryManager()
+    personality = PersonalitySystem()
+    learning = LearningEngine()
+    evolving = QuantumAIEvolving(memory_manager=memory,
+                                 personality_system=personality,
+                                 learning_engine=learning)
+    # Initialize communication layer (Ollama or your existing chat interface)
+    try:
+        ollama = OllamaEngine()
+    except Exception as e:
+        print(f"[WARN] OllamaEngine failed to init: {e}")
+        ollama = None
+
+    print("=== Quantum AI Unified Orchestrator ===")
+    print("Type 'exit' to quit.\n")
+
+    while True:
+        try:
+            user_input = input("You: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nExiting.")
+            break
+
+        if user_input.lower() in ("exit", "quit"):
+            print("Goodbye.")
+            break
+
+        # Core reasoning + evolution step
+        response = evolving.process_input(user_input)
+
+        # Optionally, route through Ollama as a language enhancer
+        if ollama is not None:
+            response = ollama.enhance_reply(response, context={
+                "memory": memory.export_state(),
+                "personality": personality.describe(),
+            })
+
+        # Show answer
+        print("\nQ:", response, "\n")
+
+        # Allow learning + memory updates
+        learning.update(user_input, response)
+        memory.store_interaction(user_input, response)
+
+if __name__ == "__main__":
+    main()
