@@ -1,0 +1,10 @@
+{
+  "project": "Q.GENESIS",
+  "version": "1.0.0",
+  "author": "Joseph Dougherty - 13th Chamber LLC",
+  "created": "2026-02-27T01:00:44.105873",
+  "ollama_model": "llama3",
+  "quantum_backend": "ibm_quantum",
+  "memory_path": "C:\\Users\\josep\\QuantumAI\\Q_GENESIS\\memory",
+  "log_path": "C:\\Users\\josep\\QuantumAI\\Q_GENESIS\\logs"
+}
