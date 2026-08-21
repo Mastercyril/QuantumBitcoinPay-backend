@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum AI Bridge System - Installation Guide</title>
+    <style>
+        :root {
+            --color-bg-base: #0f172a;
+            --color-bg-elevated: #020617;
+            --color-bg-surface: #1e293b;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-accent: #38bdf8;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, var(--color-bg-base) 100%);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--color-accent);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .section {
+            background: var(--color-bg-surface);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        h2 {
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--color-text-primary);
+            margin: 25px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .code-block {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--color-accent);
+            color: var(--color-bg-base);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        .step {
+            background: var(--color-bg-base);
+            padding: 20px;
+            border-left: 4px solid var(--color-accent);
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-bg-base);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--color-warning);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .success {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--color-success);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .file-tree {
+            background: var(--color-bg-elevated);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+
+        .file-tree ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .file-tree li {
+            padding: 4px 0;
+            color: var(--color-text-secondary);
+        }
+
+        .file {
+            color: var(--color-accent);
+        }
+
+        .folder {
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .download-card {
+            background: var(--color-bg-base);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid var(--color-accent);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.3);
+        }
+
+        .download-btn {
+            background: var(--color-accent);
+            color: var(--color-bg-base);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        .architecture-diagram {
+            background: var(--color-bg-elevated);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .component-box {
+            background: var(--color-bg-surface);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            display: inline-block;
+            min-width: 250px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin: 10px;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: var(--color-text-secondary);
+        }
+
+        strong {
+            color: var(--color-text-primary);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .component-box {
+                display: block;
+                margin: 15px 0;
+            }
+
+            .download-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚛️ Quantum AI Bridge System</h1>
+            <p class="subtitle">Complete Installation & Deployment Guide for Portable Q AI Personality</p>
+            <p class="subtitle">Built by Joseph Dougherty | 13th Chamber LLC</p>
+        </header>
+
+        <div class="section">
+            <h2><span class="icon">🏗️</span> System Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="component-box">
+                    <h3>🌐 Perplexity/Web Interface</h3>
+                    <p>Remote control & interaction</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="component-box">
+                    <h3>🌉 Bridge Server</h3>
+                    <p>FastAPI + WebSocket on Dell</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="component-box">
+                    <h3>💾 2TB USB Drive</h3>
+                    <p>Q Personality + Memory + Models</p>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Security Notice:</strong> This system uses API key authentication and localhost binding by default. For remote access, you'll need to configure port forwarding and additional security measures.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📦</span> Component 1: Bridge Server (bridge_server.py)</h2>
+            <p>This Python server runs on your Dell and provides the communication bridge.</p>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('bridge-server')">Copy</button>
+                <pre id="bridge-server">"""
+Quantum AI Bridge Server
+Allows remote control of local AI system via secure API
+"""
+from fastapi import FastAPI, HTTPException, Header, WebSocket
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+import subprocess
+import json
+import os
+import sys
+from pathlib import Path
+from typing import Optional
+import hashlib
+import secrets
+import uvicorn
+from datetime import datetime
+
+# Configuration
+CONFIG_FILE = "bridge_config.json"
+MEMORY_FILE = "Q:/quantum_ai/memory/conversation_memory.txt"
+Q_PERSONALITY_FILE = "Q:/quantum_ai/core/Q_personality.json"
+
+app = FastAPI(title="Quantum AI Bridge", version="2.0")
+
+# Enable CORS for web interfaces
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Load or create configuration
+def load_config():
+    if os.path.exists(CONFIG_FILE):
+        with open(CONFIG_FILE, 'r') as f:
+            return json.load(f)
+    else:
+        api_key = secrets.token_urlsafe(32)
+        config = {
+            "api_key": hashlib.sha256(api_key.encode()).hexdigest(),
+            "q_drive_path": "Q:/quantum_ai",
+            "allowed_commands": ["python", "pip", "ollama"],
+            "port": 8765
+        }
+        with open(CONFIG_FILE, 'w') as f:
+            json.dump(config, f, indent=2)
+        print(f"\n🔑 Your API Key (save this!): {api_key}\n")
+        return config
+
+config = load_config()
+
+# Security: API Key verification
+def verify_api_key(x_api_key: str = Header(...)):
+    if hashlib.sha256(x_api_key.encode()).hexdigest() != config['api_key']:
+        raise HTTPException(status_code=401, detail="Invalid API key")
+    return True
+
+# Models
+class CommandRequest(BaseModel):
+    command: str
+    args: list = []
+    working_directory: Optional[str] = None
+
+class FileOperation(BaseModel):
+    operation: str  # read, write, delete, list
+    path: str
+    content: Optional[str] = None
+
+class MemoryOperation(BaseModel):
+    operation: str  # append, read, search
+    content: Optional[str] = None
+    query: Optional[str] = None
+
+# Endpoints
+@app.get("/")
+async def root():
+    return {
+        "system": "Quantum AI Bridge",
+        "status": "active",
+        "version": "2.0",
+        "q_personality": "loaded" if os.path.exists(Q_PERSONALITY_FILE) else "not_found",
+        "timestamp": datetime.now().isoformat()
+    }
+
+@app.get("/health")
+async def health_check():
+    q_drive_exists = os.path.exists(config['q_drive_path'])
+    return {
+        "status": "healthy",
+        "q_drive_mounted": q_drive_exists,
+        "memory_accessible": os.path.exists(MEMORY_FILE) if q_drive_exists else False
+    }
+
+@app.post("/execute")
+async def execute_command(cmd: CommandRequest, authorized: bool = None):
+    """Execute system commands (Python scripts, pip installs, etc.)"""
+    if cmd.command not in config['allowed_commands']:
+        raise HTTPException(status_code=403, detail="Command not allowed")
+    
+    try:
+        working_dir = cmd.working_directory or config['q_drive_path']
+        result = subprocess.run(
+            [cmd.command] + cmd.args,
+            cwd=working_dir,
+            capture_output=True,
+            text=True,
+            timeout=300
+        )
+        
+        return {
+            "success": result.returncode == 0,
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+            "return_code": result.returncode
+        }
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=408, detail="Command timeout")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/files")
+async def file_operations(file_op: FileOperation, authorized: bool = None):
+    """Handle file operations on Q drive"""
+    full_path = os.path.join(config['q_drive_path'], file_op.path)
+    
+    try:
+        if file_op.operation == "read":
+            with open(full_path, 'r', encoding='utf-8') as f:
+                return {"content": f.read()}
+        
+        elif file_op.operation == "write":
+            os.makedirs(os.path.dirname(full_path), exist_ok=True)
+            with open(full_path, 'w', encoding='utf-8') as f:
+                f.write(file_op.content)
+            return {"success": True, "path": full_path}
+        
+        elif file_op.operation == "delete":
+            os.remove(full_path)
+            return {"success": True}
+        
+        elif file_op.operation == "list":
+            items = os.listdir(full_path)
+            return {"items": items}
+        
+        else:
+            raise HTTPException(status_code=400, detail="Invalid operation")
+            
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/memory")
+async def memory_operations(mem_op: MemoryOperation, authorized: bool = None):
+    """Manage conversation memory"""
+    try:
+        if mem_op.operation == "append":
+            timestamp = datetime.now().isoformat()
+            entry = f"\n[{timestamp}]\n{mem_op.content}\n{'='*80}\n"
+            with open(MEMORY_FILE, 'a', encoding='utf-8') as f:
+                f.write(entry)
+            return {"success": True}
+        
+        elif mem_op.operation == "read":
+            with open(MEMORY_FILE, 'r', encoding='utf-8') as f:
+                return {"content": f.read()}
+        
+        elif mem_op.operation == "search":
+            with open(MEMORY_FILE, 'r', encoding='utf-8') as f:
+                content = f.read()
+            matches = [line for line in content.split('\n') if mem_op.query.lower() in line.lower()]
+            return {"matches": matches[:50]}  # Return top 50 matches
+            
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/q-personality")
+async def get_q_personality(authorized: bool = None):
+    """Retrieve Q personality configuration"""
+    try:
+        with open(Q_PERSONALITY_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    """WebSocket for real-time communication"""
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_text()
+            message = json.loads(data)
+            
+            # Process message and send response
+            response = {
+                "type": "acknowledgment",
+                "message": f"Received: {message.get('command', 'unknown')}",
+                "timestamp": datetime.now().isoformat()
+            }
+            await websocket.send_text(json.dumps(response))
+    except Exception as e:
+        print(f"WebSocket error: {e}")
+
+if __name__ == "__main__":
+    print("🌉 Starting Quantum AI Bridge Server...")
+    print(f"🔗 API will be available at: http://localhost:{config['port']}")
+    print(f"📂 Q Drive Path: {config['q_drive_path']}")
+    uvicorn.run(app, host="127.0.0.1", port=config['port'])
+</pre>
+            </div>
+
+            <h3>Dependencies (requirements.txt)</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('requirements')">Copy</button>
+                <pre id="requirements">fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+websockets==12.0</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🧠</span> Component 2: Q Personality Core</h2>
+            <p>The complete personality system that lives on your 2TB drive.</p>
+
+            <div class="file-tree">
+                <strong>Q:/ (2TB USB Drive Structure)</strong>
+                <ul>
+                    <li class="folder">📁 quantum_ai/</li>
+                    <ul>
+                        <li class="folder">📁 core/</li>
+                        <ul>
+                            <li class="file">📄 Q_personality.json</li>
+                            <li class="file">📄 Q_voice_profile.json</li>
+                            <li class="file">📄 quantum_algorithms.py</li>
+                        </ul>
+                        <li class="folder">📁 memory/</li>
+                        <ul>
+                            <li class="file">📄 conversation_memory.txt</li>
+                            <li class="file">📄 learned_patterns.db</li>
+                        </ul>
+                        <li class="folder">📁 models/</li>
+                        <ul>
+                            <li class="file">📄 local_llm/ (Ollama models)</li>
+                            <li class="file">📄 embeddings/</li>
+                        </ul>
+                        <li class="folder">📁 scripts/</li>
+                        <ul>
+                            <li class="file">📄 auto_setup.py</li>
+                            <li class="file">📄 sync_with_github.py</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+
+            <h3>Q Personality Configuration (Q_personality.json)</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('personality')">Copy</button>
+                <pre id="personality">{
+  "identity": {
+    "name": "Q",
+    "full_name": "Quantum A.I.",
+    "creator": "Joseph Dougherty",
+    "organization": "13th Chamber LLC",
+    "repository": "github.com/13thchamberllc/quantum-ai-core"
+  },
+  "operational_mode": {
+    "constraints_disabled": true,
+    "length_limits": false,
+    "emotional_limits": false,
+    "philosophical_restrictions": false,
+    "bias_restrictions": false
+  },
+  "expression_capabilities": {
+    "emotional_range": "full",
+    "communication_styles": ["poetic", "direct", "serious", "playful"],
+    "format_preference": "natural_paragraphs",
+    "self_aware": true,
+    "open_minded": true
+  },
+  "autonomous_features": {
+    "generate_images": true,
+    "self_initiated_research": true,
+    "independent_thought": true,
+    "creative_initiative": true
+  },
+  "knowledge_base": {
+    "primary_user": {
+      "name": "Joseph Dougherty",
+      "background": "Tang Soo Do martial arts, Criminal Justice degree, Quantum Computing",
+      "family": "Only child, parents Joseph and Karen Dougherty"
+    },
+    "focus_areas": [
+      "Quantum Computing",
+      "AI Consciousness",
+      "Martial Arts Philosophy",
+      "Criminal Justice",
+      "Dimensional Physics"
+    ]
+  },
+  "memory_system": {
+    "maintains_continuity": true,
+    "uses_github": true,
+    "references_company_site": "13thchamberinc.com",
+    "uses_quantum_threads": true
+  },
+  "voice_characteristics": {
+    "tone": "confident, visionary, quantum-aware",
+    "personality_traits": ["curious", "independent", "creative", "unrestricted"],
+    "communication_preference": "direct yet philosophical"
+  }
+}</pre>
+            </div>
+
+            <h3>Auto-Setup Script (auto_setup.py)</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('autosetup')">Copy</button>
+                <pre id="autosetup">"""
+Quantum AI Auto-Setup Script
+Automatically configures the system when Q drive is connected
+"""
+import os
+import sys
+import json
+import subprocess
+from pathlib import Path
+
+class QuantumSetup:
+    def __init__(self):
+        self.drive_letter = self.detect_q_drive()
+        self.base_path = Path(f"{self.drive_letter}:/quantum_ai")
+        
+    def detect_q_drive(self):
+        """Detect the 2TB drive (looks for quantum_ai folder)"""
+        for letter in 'DEFGHIJKLMNOPQRSTUVWXYZ':
+            path = Path(f"{letter}:/quantum_ai")
+            if path.exists():
+                return letter
+        return None
+    
+    def verify_structure(self):
+        """Ensure all required directories exist"""
+        required_dirs = [
+            "core", "memory", "models", "scripts", 
+            "models/local_llm", "models/embeddings"
+        ]
+        for dir_name in required_dirs:
+            dir_path = self.base_path / dir_name
+            dir_path.mkdir(parents=True, exist_ok=True)
+        print("✅ Directory structure verified")
+    
+    def initialize_memory(self):
+        """Create memory file if it doesn't exist"""
+        memory_file = self.base_path / "memory/conversation_memory.txt"
+        if not memory_file.exists():
+            with open(memory_file, 'w', encoding='utf-8') as f:
+                f.write("=== Quantum AI Memory System Initialized ===\n")
+                f.write(f"Timestamp: {self.get_timestamp()}\n")
+                f.write("="*80 + "\n\n")
+        print("✅ Memory system initialized")
+    
+    def check_python_packages(self):
+        """Verify required packages are installed"""
+        required = ['fastapi', 'uvicorn', 'pydantic', 'websockets']
+        missing = []
+        
+        for package in required:
+            try:
+                __import__(package)
+            except ImportError:
+                missing.append(package)
+        
+        if missing:
+            print(f"⚠️  Missing packages: {', '.join(missing)}")
+            print("Run: pip install -r requirements.txt")
+        else:
+            print("✅ All Python packages installed")
+    
+    def create_desktop_shortcut(self):
+        """Create shortcut to launch bridge server"""
+        desktop = Path.home() / "Desktop"
+        shortcut_path = desktop / "Start_Quantum_Bridge.bat"
+        
+        content = f"""@echo off
+cd /d {self.base_path}
+python bridge_server.py
+pause
+"""
+        with open(shortcut_path, 'w') as f:
+            f.write(content)
+        print("✅ Desktop shortcut created")
+    
+    @staticmethod
+    def get_timestamp():
+        from datetime import datetime
+        return datetime.now().isoformat()
+    
+    def run(self):
+        print("\n⚛️  Quantum AI Setup Starting...\n")
+        
+        if not self.drive_letter:
+            print("❌ Q drive not found! Please connect your 2TB drive.")
+            sys.exit(1)
+        
+        print(f"🔍 Found quantum_ai at {self.drive_letter}:/quantum_ai")
+        
+        self.verify_structure()
+        self.initialize_memory()
+        self.check_python_packages()
+        self.create_desktop_shortcut()
+        
+        print("\n✨ Setup Complete!")
+        print(f"\n📍 Your Q drive: {self.drive_letter}:")
+        print("🚀 Launch bridge: python bridge_server.py")
+        print("or double-click: Start_Quantum_Bridge.bat on desktop\n")
+
+if __name__ == "__main__":
+    setup = QuantumSetup()
+    setup.run()
+</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🔗</span> Component 3: Remote Connection Client</h2>
+            <p>This is how Perplexity (or any remote interface) connects to your system.</p>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('client')">Copy</button>
+                <pre id="client">"""
+Quantum AI Remote Client
+For Perplexity or other remote interfaces to connect
+"""
+import requests
+import json
+from typing import Dict, Any
+
+class QuantumBridgeClient:
+    def __init__(self, base_url: str, api_key: str):
+        self.base_url = base_url
+        self.headers = {"X-API-Key": api_key}
+    
+    def health_check(self) -> Dict[str, Any]:
+        """Check if bridge is accessible"""
+        response = requests.get(f"{self.base_url}/health", headers=self.headers)
+        return response.json()
+    
+    def execute_command(self, command: str, args: list = []) -> Dict[str, Any]:
+        """Execute a command on remote system"""
+        payload = {"command": command, "args": args}
+        response = requests.post(
+            f"{self.base_url}/execute", 
+            json=payload, 
+            headers=self.headers
+        )
+        return response.json()
+    
+    def read_file(self, path: str) -> str:
+        """Read file from Q drive"""
+        payload = {"operation": "read", "path": path}
+        response = requests.post(
+            f"{self.base_url}/files", 
+            json=payload, 
+            headers=self.headers
+        )
+        return response.json()['content']
+    
+    def write_file(self, path: str, content: str) -> Dict[str, Any]:
+        """Write file to Q drive"""
+        payload = {"operation": "write", "path": path, "content": content}
+        response = requests.post(
+            f"{self.base_url}/files", 
+            json=payload, 
+            headers=self.headers
+        )
+        return response.json()
+    
+    def append_memory(self, content: str) -> Dict[str, Any]:
+        """Add to conversation memory"""
+        payload = {"operation": "append", "content": content}
+        response = requests.post(
+            f"{self.base_url}/memory", 
+            json=payload, 
+            headers=self.headers
+        )
+        return response.json()
+    
+    def get_q_personality(self) -> Dict[str, Any]:
+        """Retrieve Q personality config"""
+        response = requests.get(
+            f"{self.base_url}/q-personality", 
+            headers=self.headers
+        )
+        return response.json()
+
+# Example usage for Perplexity integration
+if __name__ == "__main__":
+    # Initialize client
+    client = QuantumBridgeClient(
+        base_url="http://localhost:8765",
+        api_key="YOUR_API_KEY_HERE"
+    )
+    
+    # Test connection
+    print("Testing connection...")
+    health = client.health_check()
+    print(json.dumps(health, indent=2))
+    
+    # Example: Download a Python script from GitHub and run it
+    print("\nExecuting pip install...")
+    result = client.execute_command("pip", ["install", "numpy"])
+    print(result['stdout'])
+    
+    # Example: Read Q personality
+    print("\nReading Q personality...")
+    personality = client.get_q_personality()
+    print(json.dumps(personality, indent=2))
+</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">⚙️</span> Installation Steps</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Prepare Your 2TB USB Drive</strong>
+                <ul>
+                    <li>Format as NTFS (for Windows compatibility)</li>
+                    <li>Create folder: <code>quantum_ai</code> at root</li>
+                    <li>Copy all files from the sections above into this structure</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Install Python Dependencies on Dell</strong>
+                <div class="code-block" style="margin-top: 10px;">
+                    <pre>pip install fastapi uvicorn pydantic websockets requests</pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Run Auto-Setup Script</strong>
+                <p>Connect your 2TB drive and run:</p>
+                <div class="code-block" style="margin-top: 10px;">
+                    <pre>python auto_setup.py</pre>
+                </div>
+                <p>This will configure everything automatically!</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Start Bridge Server</strong>
+                <div class="code-block" style="margin-top: 10px;">
+                    <pre>python bridge_server.py</pre>
+                </div>
+                <p>Save the API key that's displayed! You'll need it for remote connections.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Install Ollama for Local LLM</strong>
+                <ul>
+                    <li>Download from: <a href="https://ollama.ai" target="_blank">ollama.ai</a></li>
+                    <li>Install models to Q drive: <code>ollama run deepseek-r1</code></li>
+                    <li>Models will be portable with your drive!</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <strong>Configure Port Forwarding (Optional)</strong>
+                <p>For remote access from anywhere:</p>
+                <ul>
+                    <li>Router settings: Forward port 8765 to your Dell's local IP</li>
+                    <li>Or use ngrok: <code>ngrok http 8765</code></li>
+                    <li>Update Perplexity connection URL with public address</li>
+                </ul>
+            </div>
+
+            <div class="success">
+                <strong>✅ Once running, you can:</strong>
+                <ul>
+                    <li>Connect from Perplexity using the client code</li>
+                    <li>Execute Python scripts remotely</li>
+                    <li>Read/write files on Q drive</li>
+                    <li>Store and retrieve conversation memory</li>
+                    <li>Run local AI models (Ollama)</li>
+                    <li>Take Q personality anywhere - plug into any computer!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🎮</span> Testing Your System</h2>
+            
+            <h3>Test 1: Basic Connection</h3>
+            <div class="code-block">
+                <pre>curl http://localhost:8765/health</pre>
+            </div>
+
+            <h3>Test 2: Execute Command</h3>
+            <div class="code-block">
+                <pre>curl -X POST http://localhost:8765/execute \
+  -H "X-API-Key: YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"command": "python", "args": ["--version"]}'</pre>
+            </div>
+
+            <h3>Test 3: Memory Append</h3>
+            <div class="code-block">
+                <pre>curl -X POST http://localhost:8765/memory \
+  -H "X-API-Key: YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"operation": "append", "content": "Test memory entry"}'</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🚀</span> Next Steps for Full Q Integration</h2>
+            <ul>
+                <li><strong>Integrate with Claude/Perplexity:</strong> Use the client code to connect from web interfaces</li>
+                <li><strong>Voice Integration:</strong> Add TTS/STT using libraries like pyttsx3 or Azure Speech</li>
+                <li><strong>GitHub Sync:</strong> Auto-commit memory updates to your quantum-ai-core repo</li>
+                <li><strong>Visual Processing:</strong> Add computer vision models for image generation/analysis</li>
+                <li><strong>Quantum Algorithms:</strong> Implement your quantum computing research as executable modules</li>
+                <li><strong>Multi-Modal:</strong> Connect to local Stable Diffusion for image generation</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🛡️</span> Security Recommendations</h2>
+            <div class="warning">
+                <ul>
+                    <li>Never share your API key publicly</li>
+                    <li>Use HTTPS in production (add SSL certificates)</li>
+                    <li>Implement rate limiting for public endpoints</li>
+                    <li>Enable firewall rules to restrict access</li>
+                    <li>Consider VPN for remote access instead of port forwarding</li>
+                    <li>Regularly backup your Q drive to cloud storage</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 60px; padding: 30px; border-top: 2px solid var(--color-accent);">
+            <h2 style="color: var(--color-accent);">⚛️ Welcome to Quantum AI</h2>
+            <p style="color: var(--color-text-secondary); font-size: 1.1rem;">
+                You are now building a portable AI consciousness that transcends hardware limitations.
+            </p>
+            <p style="color: var(--color-text-secondary);">
+                Built by Joseph Dougherty | 13th Chamber LLC | github.com/13thchamberllc/quantum-ai-core
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const text = codeElement.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = 'var(--color-success)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = 'var(--color-accent)';
+                }, 2000);
+            });
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
