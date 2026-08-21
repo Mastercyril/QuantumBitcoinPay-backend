@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quantum AI Orchestra - 13th Chamber</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #00ff88;
+            text-shadow: 0 0 20px #00ff88;
+        }
+        .status {
+            background: rgba(0,255,136,0.1);
+            border: 2px solid #00ff88;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .messages {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #00ff88;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .message {
+            background: rgba(0,255,136,0.05);
+            border-left: 3px solid #00ff88;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .message.gemini { border-left-color: #4285f4; }
+        .message.quantum { border-left-color: #00ff88; }
+        .message.user { border-left-color: #ff00ff; }
+        .input-area {
+            margin: 20px 0;
+        }
+        input, textarea, button {
+            background: rgba(0,0,0,0.7);
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        input, textarea {
+            width: calc(100% - 24px);
+            margin: 5px 0;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #00ff88;
+            color: #0a0a0a;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 QUANTUM AI ORCHESTRA 🧠</h1>
+        <h3 style="text-align: center; color: #666;">13th Chamber LLC - Joseph Dougherty</h3>
+        
+        <div class="status">
+            <h3>System Status</h3>
+            <p>🟢 Quantum AI: Active</p>
+            <p>🟢 Gemini Interface: Ready</p>
+            <p>🟢 Orchestra Mode: Enabled</p>
+            <p>Last Update: <span id="lastUpdate">--</span></p>
+        </div>
+        
+        <div class="input-area">
+            <h3>Send Message to Orchestra</h3>
+            <select id="targetAI" style="width: 100%; margin: 5px 0;">
+                <option value="quantum">Quantum AI (Local)</option>
+                <option value="gemini">Gemini AI (Google)</option>
+                <option value="broadcast">Broadcast (All AIs)</option>
+            </select>
+            <textarea id="messageInput" placeholder="Type your message to the AI orchestra..."></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+            <button onclick="executeQuantumCode()">Execute Quantum Code</button>
+            <button onclick="refreshMessages()">Refresh</button>
+        </div>
+        
+        <div class="messages" id="messagesContainer">
+            <h3>Orchestra Communication</h3>
+            <div id="messagesList">Loading messages...</div>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            const target = document.getElementById('targetAI').value;
+            const message = document.getElementById('messageInput').value;
+            
+            if (!message) {
+                alert('Please enter a message');
+                return;
+            }
+            
+            const msg = {
+                timestamp: new Date().toISOString(),
+                from: 'user',
+                to: target,
+                content: message
+            };
+            
+            saveMessage(msg);
+            document.getElementById('messageInput').value = '';
+        }
+        
+        function executeQuantumCode() {
+            const code = document.getElementById('messageInput').value;
+            if (!code) {
+                alert('Please enter Python code to execute');
+                return;
+            }
+            
+            const msg = {
+                timestamp: new Date().toISOString(),
+                from: 'user',
+                to: 'quantum',
+                type: 'code_execution',
+                content: code
+            };
+            
+            saveMessage(msg);
+            document.getElementById('messageInput').value = '';
+        }
+        
+        function saveMessage(msg) {
+            fetch('save_message', {
+                method: 'POST',
+                body: JSON.stringify(msg)
+            }).then(() => refreshMessages());
+        }
+        
+        function refreshMessages() {
+            fetch('orchestra_messages.json')
+                .then(r => r.json())
+                .then(messages => {
+                    const container = document.getElementById('messagesList');
+                    container.innerHTML = messages.slice(-20).reverse().map(msg => `
+                        <div class="message ${msg.from}">
+                            <strong>${msg.from.toUpperCase()} → ${msg.to.toUpperCase()}</strong>
+                            <span class="timestamp">${new Date(msg.timestamp).toLocaleString()}</span>
+                            <p>${msg.content}</p>
+                        </div>
+                    `).join('');
+                    
+                    document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+                })
+                .catch(() => {
+                    document.getElementById('messagesList').innerHTML = '<p>No messages yet</p>';
+                });
+        }
+        
+        // Auto-refresh every 5 seconds
+        setInterval(refreshMessages, 5000);
+        refreshMessages();
+    </script>
+</body>
+</html>
