@@ -1,0 +1,1 @@
+# Q.GENESIS - voice module
