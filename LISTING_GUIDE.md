@@ -1,71 +1,71 @@
 # QSAM/QBTC Token Listing Guide
 
-## Token Information
+## Required Information
 
-### QSAM
-- **Name:** QSAM
+### QSAM Quantum Token
+- **Name:** QSAM Quantum Token
 - **Symbol:** QSAM
-- **Blockchain:** Solana
-- **Mint Address:** 5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x
-- **Supply:** 350,000,000
+- **Blockchain:** Solana (Mainnet)
+- **Mint Address:** 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
+- **Token Account:** 7h3rAWiyu3RshrvHQGgDyyS6t7u2BexzMmYwrPfFYrKC
+- **Supply:** 350,000,000 QSAM
 - **Decimals:** 9
 - **Price:** $0.01
 - **Treasury:** 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
+- **Logo:** https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg
+- **Website:** https://quantumbitcoinpay.com
+- **GitHub:** https://github.com/Mastercyril/QuantumBitcoinPay-backend
+- **Description:** Quantum State Amplitude Modulation token powered by IBM Quantum verified PoQW consensus. 1965x quantum advantage. CHSH S=2.781. Patent pending 50 claims.
 
-### QBTC
-- **Name:** QBTC
+### Quantum Bitcoin (QBTC)
+- **Name:** Quantum Bitcoin
 - **Symbol:** QBTC
-- **Blockchain:** Solana
+- **Blockchain:** Solana (Mainnet)
 - **Mint Address:** EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
-- **Supply:** 21,000,000
+- **Supply:** 21,000,000 QBTC
 - **Decimals:** 9
-- **Price:** $0.001 (Phase 1 presale)
-- **Treasury:** 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
+- **Price:** $0.001 (Phase 1 Presale)
+- **Description:** Quantum Bitcoin powered by PoQW (Proof of Quantum Work). ASIC-resistant quantum mining with CHSH > 2.0 verification.
 
-## Listing Submissions
+### Solana Explorer Links
+- QSAM: https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
+- QBTC: https://solscan.io/token/EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
+- Treasury: https://solscan.io/account/2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
+
+## Submission Targets
 
 ### 1. CoinGecko
-- URL: https://www.coingecko.com (scroll to bottom → Request Form → New Coin/Token Listing)
-- Requirements: Contract address, website, GitHub, social links, logo
-- Status: Ready to submit
+- URL: https://www.coingecko.com/en/forms/coin-listing-request (requires login)
+- OR: https://docs.coingecko.com/reference/listing-form
+- Requirements: Project name, symbol, contract address, website, GitHub, social links, logo, description
 
 ### 2. CoinMarketCap
-- URL: https://coinmarketcap.com (Get listed → Submit)
-- Requirements: Contract address, trading pairs, market data
-- Status: Ready to submit (needs liquidity pool for trading data)
+- URL: https://coinmarketcap.com/submit-your-project (requires login)
+- Requirements: Same as CoinGecko + team info, whitepaper, community links
 
-### 3. DexScreener
-- URL: https://dexscreener.com (auto-indexes Solana tokens with liquidity pools)
-- Status: Pending liquidity pool creation
+### 3. DEXScreener
+- URL: https://dexscreener.com (automatic for Solana tokens with liquidity)
 
-### 4. DEXTools
-- URL: https://www.dextools.io (auto-indexes Solana tokens with liquidity pools)
-- Status: Pending liquidity pool creation
+### 4. Raydium Liquidity Pool
+- URL: https://raydium.io/liquidity/create
+- Requirements: 0.5+ SOL in treasury, token mint address, initial price
+- Create QSAM/SOL pool with 350K QSAM + 0.5 SOL
 
-### 5. Birdeye
-- URL: https://birdeye.so (auto-indexes Solana tokens)
-- Status: Pending liquidity pool creation
+### 5. Pump.fun
+- URL: https://pump.fun
+- Status: Form filled, awaiting wallet signature
 
-### 6. Solscan / Solana Explorer
-- Status: Already indexed (on-chain)
-
-## Social Links
+## Social/Community Links
 - Website: https://quantumbitcoinpay.com
-- Website: https://13thchamberllc.com
-- Puter: https://13thchamber.puter.site
 - GitHub: https://github.com/Mastercyril/QuantumBitcoinPay-backend
-- GitHub: https://github.com/Mastercyril/QSAM-quantum-token
-- Email: josephdougherty483@gmail.com
-- PayPal: https://www.paypal.com/ncp/payment/K56PDTWN9FR26
+- Notion: https://app.notion.com/p/cfff6070466c48ad90c9348073903c9b
+- QAI Playground: https://share.google/uKFs7Cu0OO8xHuqQ1
+- Contact: josephdougherty483@gmail.com
 
-## Quantum Credentials
-- 381x speedup verified on IBM Quantum hardware
-- 50-claim patent portfolio
-- CHSH parameter: 2.781 ± 0.045
-- SCORE protocol: 50x fidelity improvement (95.34% → 99.73%)
-- 6-qubit SHA-256 analysis at 97.2% confidence
-- IBM backends: ibm_torino, ibm_sherbrooke, ibm_brisbane
-
-## AI Engine
-- QAI2 (josephdougherty483/qai2) via Ollama
-- Daily automated reports and quantum simulations
+## Technology Highlights
+- 8 proprietary quantum systems (QSAM, SCORE, ESCORT, QELS, CACP, CPAR, AQBB_v3, GEL)
+- IBM Quantum verified (ibm_torino 133q Heron r1)
+- 1965x total quantum advantage
+- Post-quantum security (S-Corner Protocol: CRYSTALS-Dilithium + KYBER)
+- Universal Codex mathematical framework
+- Patent: 50 claims covering all systems
