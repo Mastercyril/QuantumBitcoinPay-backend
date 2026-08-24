@@ -125,7 +125,8 @@ class QToken:
         
         self.state = QuantumState(amplitudes, labels)
         self.context = context or {}
-        self._entangled_with: List['QToken'] = []
+        self._entangled_with: List["QToken"] = []
+        self.position: int = 0
     
     @property
     def quantum_state(self) -> QuantumState:
