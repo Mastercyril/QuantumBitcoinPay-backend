@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-25",
+  "model": "qai2-v6.1",
+  "crypto": {"SOL": 98.745, "BTC": 79057.415, "ETH": 2474.635},
+  "quantum_report": {"fidelity": 99.73, "entropy": 0.007, "backend": "local_ollama", "shots": 4096},
+  "tavus": {"production_videos_ready": 5, "older_test_video_error": 1},
+  "perplexity": "accessible_public_landing_page; no visible sessions or project updates while signed out",
+  "event": "Daily QAI2 v6.1 evolution completed"
+}
