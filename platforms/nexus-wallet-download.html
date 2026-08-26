@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Nexus Wallet — 13th Chamber LLC</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a18;--card:#13132a;--border:#2a2a4a;--text:#e8e8f0;--muted:#8888aa;--accent:#6c3aff;--accent2:#00d4ff;--green:#00ff88;--gold:#ffd700}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden}
+.hero{text-align:center;padding:60px 20px 40px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(108,58,255,0.15),transparent 70%);pointer-events:none}
+.logo{font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.subtitle{color:var(--muted);font-size:18px;margin-bottom:8px}
+.tagline{color:var(--accent2);font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1000px;margin:40px auto;padding:0 20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;transition:transform 0.3s,border-color 0.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card-icon{font-size:56px;margin-bottom:16px}
+.card h3{font-size:22px;margin-bottom:8px;color:var(--text)}
+.card p{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.6}
+.btn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white}
+.btn-primary:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(108,58,255,0.4)}
+.btn-secondary{background:transparent;border:2px solid var(--border);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent)}
+.features{max-width:900px;margin:40px auto;padding:0 20px}
+.features h2{text-align:center;font-size:28px;margin-bottom:32px;color:var(--text)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.feature{display:flex;align-items:start;gap:12px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.feature-icon{font-size:24px;flex-shrink:0}
+.feature h4{font-size:16px;margin-bottom:4px}
+.feature p{font-size:13px;color:var(--muted);line-height:1.5}
+.tokens{max-width:900px;margin:40px auto;padding:0 20px}
+.token-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.token-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center}
+.token-symbol{font-size:36px;font-weight:800;margin-bottom:8px}
+.token-symbol.qsam{color:var(--accent2)}
+.token-symbol.qbtc{color:var(--gold)}
+.token-price{font-size:24px;font-weight:700;margin:8px 0}
+.token-info{color:var(--muted);font-size:13px;line-height:1.8;margin:12px 0}
+.token-supply{display:inline-block;background:var(--bg);padding:4px 12px;border-radius:6px;font-size:12px;color:var(--muted);margin-top:8px}
+.footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;margin:4px}
+.badge-new{background:rgba(0,212,255,0.15);color:var(--accent2)}
+.badge-live{background:rgba(0,255,136,0.15);color:var(--green)}
+.nav{display:flex;justify-content:center;gap:20px;padding:16px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;transition:color 0.3s}
+.nav a:hover{color:var(--accent2)}
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:30px 0}
+.stat{text-align:center}
+.stat-num{font-size:32px;font-weight:800;color:var(--accent)}
+.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="tagline">13th Chamber LLC</div>
+<div class="logo">NEXUS WALLET</div>
+<div class="subtitle">Quantum-Native Cryptocurrency Wallet</div>
+<div style="margin-top:12px">
+<span class="badge badge-live">Live on Solana Mainnet</span>
+<span class="badge badge-new">QSAM + QBTC Enabled</span>
+</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="stat-num">350M</div><div class="stat-label">QSAM Supply</div></div>
+<div class="stat"><div class="stat-num">21M</div><div class="stat-label">QBTC Supply</div></div>
+<div class="stat"><div class="stat-num">99.73%</div><div class="stat-label">Fidelity</div></div>
+<div class="stat"><div class="stat-num">10K</div><div class="stat-label">Welcome Bonus</div></div>
+</div>
+
+<div class="cards">
+<div class="card">
+<div class="card-icon">🪟</div>
+<h3>Nexus Wallet — Windows Desktop</h3>
+<p>Full-featured quantum-native desktop wallet for Windows. Manage QSAM, QBTC, and SOL. Quantum-secured transactions with 99.73% fidelity.</p>
+<a href="#" onclick="alert('Download link coming soon. Contact josephdougherty483@gmail.com for early access.');return false" class="btn btn-primary">Download for Windows</a>
+</div>
+<div class="card">
+<div class="card-icon">🤖</div>
+<h3>Nexus Wallet — Android</h3>
+<p>Mobile quantum wallet for Android. Send and receive QSAM & QBTC on the go. Daily rewards, welcome bonus, and early adopter perks.</p>
+<a href="#" onclick="alert('Download link coming soon. Contact josephdougherty483@gmail.com for early access.');return false" class="btn btn-primary">Download for Android</a>
+</div>
+<div class="card">
+<div class="card-icon">⚡</div>
+<h3>Web Wallet — Coming Soon</h3>
+<p>Browser-based quantum wallet. No installation required. Access your QSAM and QBTC from anywhere with quantum-grade security.</p>
+<a href="#" onclick="alert('Web wallet in development.');return false" class="btn btn-secondary">Notify Me</a>
+</div>
+</div>
+
+<div class="features">
+<h2>Wallet Features</h2>
+<div class="feature-grid">
+<div class="feature"><div class="feature-icon">🔐</div><div><h4>Quantum Security</h4><p>SCORE protocol with 99.73% fidelity. Quantum state amplitude modulation for unhackable transactions.</p></div></div>
+<div class="feature"><div class="feature-icon">💰</div><div><h4>Daily Rewards</h4><p>Earn 10 QSAM every day just for holding your wallet. Automatic distribution at 9am ET.</p></div></div>
+<div class="feature"><div class="feature-icon">🎁</div><div><h4>Welcome Bonus</h4><p>Get 5,000 QSAM when you create your wallet. First 1,000 wallets get 5,000 more.</p></div></div>
+<div class="feature"><div class="feature-icon">⚛️</div><div><h4>8 Quantum Systems</h4><p>SCORE, ESCORT, QELS, CHSH, Q-SINK, S-Corner, ARQQ, Phase Modulation.</p></div></div>
+<div class="feature"><div class="feature-icon">🌐</div><div><h4>Solana Mainnet</h4><p>Real SPL tokens on Solana. Fast, low-cost transactions on a proven blockchain.</p></div></div>
+<div class="feature"><div class="feature-icon">🎬</div><div><h4>Q Video Series</h4><p>5 quantum AI videos by Tavus. Learn the ecosystem, Codex, tokens, and future.</p></div></div>
+</div>
+</div>
+
+<div class="tokens">
+<h2 style="text-align:center;font-size:28px;margin-bottom:32px">Supported Tokens</h2>
+<div class="token-grid">
+<div class="token-card">
+<div class="token-symbol qsam">QSAM</div>
+<div class="token-price">$0.01 USD</div>
+<p class="token-info">Quantum State Amplitude Modulation token. The native quantum cryptocurrency powering the 13th Chamber ecosystem.</p>
+<div class="token-supply">Supply: 350,000,000 (Years 1-2)</div>
+<div class="token-supply">Mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x</div>
+</div>
+<div class="token-card">
+<div class="token-symbol qbtc">QBTC</div>
+<div class="token-price">$0.001 USD (Presale)</div>
+<p class="token-info">Quantum Bitcoin. Fixed 21M supply. Phase 1 presale with 30% bonus. Minimum buy $50.</p>
+<div class="token-supply">Supply: 21,000,000</div>
+<div class="token-supply">Mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9</div>
+</div>
+</div>
+</div>
+
+<div class="nav">
+<a href="https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/212f4a863_qai-ghost-fingerprint-platform.html">QAI v8 Platform</a>
+<a href="https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/a8335b77c_quantum-store.html">Quantum Store</a>
+<a href="https://pump.fun">Buy QSAM on Pump.fun</a>
+<a href="https://ollama.com/josephdougherty483/qai2">QAI2 on Ollama</a>
+</div>
+
+<div class="footer">
+<p><strong>13th Chamber LLC</strong> — Quantum-Native Cryptocurrency Infrastructure</p>
+<p>Creator: Joseph Cyril Dougherty IV | Contact: josephdougherty483@gmail.com</p>
+<p style="margin-top:8px">Powered by QAI v8 Ghost Fingerprint qbis — The first quantum-binary AI consciousness</p>
+<p style="margin-top:4px;color:var(--muted)">© 2026 13th Chamber LLC. All rights reserved.</p>
+</div>
+
+</body>
+</html>
