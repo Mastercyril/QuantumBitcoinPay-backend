@@ -1,0 +1,164 @@
+{
+  "qsam": {
+    "name": "QSAM Quantum Token",
+    "symbol": "QSAM",
+    "description": "Quantum-native SPL token on Solana backed by the 13th Chamber quantum ecosystem, featuring 8 proprietary quantum systems, IBM Quantum hardware integration with 381x verified speedup, daily rewards (10 QSAM/day), and 5,000 QSAM welcome bonus.",
+    "blockchain": "Solana",
+    "token_standard": "Solana SPL",
+    "mint_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "total_supply": 350000000,
+    "max_supply": 350000000,
+    "decimals": 9,
+    "base_price_usd": 0.01,
+    "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+    "website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
+    "secondary_websites": [
+      "https://quantumbitcoinpay.com",
+      "https://13thchamberinc.com",
+      "https://13thchamberllc.com",
+      "https://13thchamber.puter.site"
+    ],
+    "github": "https://github.com/Mastercyril/QSAM-quantum-token",
+    "github_backend": "https://github.com/Mastercyril/QuantumBitcoinPay-backend",
+    "explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "solana_explorer": "https://explorer.solana.com/address/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "twitter": "https://twitter.com/13thchamber",
+    "telegram": "https://t.me/quantumbitcoinpay",
+    "logo_uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png",
+    "logo_svg": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg",
+    "creator": "13th Chamber LLC",
+    "founder": "Joseph Dougherty IV (Joseph Cyril Dougherty IV)",
+    "contact_email": "josephdougherty483@gmail.com",
+    "categories": [
+      "Quantum Computing",
+      "DeFi",
+      "Solana Ecosystem",
+      "AI",
+      "Utility Token",
+      "Rewards"
+    ]
+  },
+  "qbtc": {
+    "name": "QBTC Quantum Bitcoin",
+    "symbol": "QBTC",
+    "description": "Quantum Bitcoin \u2014 post-quantum secured cryptocurrency on Solana with Phase 1 presale offering 30% bonus, acting as a post-quantum store of value.",
+    "blockchain": "Solana",
+    "token_standard": "Solana SPL",
+    "mint_address": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
+    "total_supply": 21000000,
+    "max_supply": 21000000,
+    "decimals": 9,
+    "presale_price_usd": 0.001,
+    "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+    "website": "https://quantumbitcoinpay.com",
+    "categories": [
+      "Quantum Computing",
+      "Bitcoin",
+      "Store of Value",
+      "Solana Ecosystem"
+    ]
+  },
+  "organization": {
+    "company_name": "13th Chamber LLC",
+    "founder": "Joseph Cyril Dougherty IV",
+    "contact_email": "josephdougherty483@gmail.com",
+    "paypal_checkout": "https://www.paypal.com/ncp/payment/K56PDTWN9FR26",
+    "wallet_apps": "Nexus Wallet (Windows & Android)"
+  },
+  "quantum_tech": {
+    "verified_speedup": "381x on IBM Quantum hardware",
+    "patent_claims": "50-claim patent portfolio",
+    "chsh_parameter": "2.781 \u00b1 0.045",
+    "score_protocol": "50x fidelity improvement (95.34% -> 99.73%)",
+    "ibm_backends": [
+      "ibm_torino",
+      "ibm_sherbrooke",
+      "ibm_brisbane"
+    ],
+    "quantum_systems": [
+      "SCORE (Superconducting Coherence Optimization and Recovery Engine)",
+      "ESCORT",
+      "QELS",
+      "CHSH Verification",
+      "Q-SINK",
+      "S-Corner",
+      "ARQQ",
+      "Phase Modulation"
+    ]
+  },
+  "tokenomics": {
+    "qsam": {
+      "total_supply": 350000000,
+      "distribution": [
+        {
+          "category": "Ecosystem Utility & Daily Rewards Pool",
+          "percentage": 40,
+          "amount": 140000000
+        },
+        {
+          "category": "Corporate Treasury & Hardware Reserve (13th Chamber LLC)",
+          "percentage": 25,
+          "amount": 87500000
+        },
+        {
+          "category": "DEX Liquidity & Market Making",
+          "percentage": 15,
+          "amount": 52500000
+        },
+        {
+          "category": "Team & Founder Vested Allocation",
+          "percentage": 10,
+          "amount": 35000000
+        },
+        {
+          "category": "Community Early Adopter & Presale Incentive",
+          "percentage": 10,
+          "amount": 35000000
+        }
+      ],
+      "utility": [
+        "Daily holder rewards (10 QSAM/wallet/day)",
+        "Nexus Wallet welcome bonus (5,000 QSAM)",
+        "Quantum hardware workload execution fees",
+        "Ecosystem governance & staking"
+      ]
+    },
+    "qbtc": {
+      "total_supply": 21000000,
+      "presale_phase_1": "$0.001 USD per QBTC (30% presale bonus, $50 minimum)"
+    }
+  },
+  "coingecko_submission": {
+    "token_name": "QSAM Quantum Token",
+    "token_symbol": "QSAM",
+    "blockchain": "Solana",
+    "contract_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "decimals": 9,
+    "official_website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
+    "block_explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "github_repository": "https://github.com/Mastercyril/QSAM-quantum-token",
+    "twitter": "https://twitter.com/13thchamber",
+    "telegram": "https://t.me/quantumbitcoinpay",
+    "logo_url": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png",
+    "detailed_description": "QSAM Quantum Token is a quantum-native SPL token on Solana created by 13th Chamber LLC (Joseph Dougherty IV). It powers the 13th Chamber quantum ecosystem, which incorporates 8 proprietary quantum systems (SCORE, ESCORT, QELS, CHSH, Q-SINK, S-Corner, ARQQ, Phase Modulation) and IBM Quantum hardware integration (ibm_torino, ibm_sherbrooke, ibm_brisbane) achieving a verified 381x quantum speedup. Token holders receive 10 QSAM daily rewards per wallet and a 5,000 QSAM welcome bonus when registering on the Nexus Wallet."
+  },
+  "coinmarketcap_submission": {
+    "project_name": "QSAM Quantum Token",
+    "symbol": "QSAM",
+    "crypto_type": "Token (SPL)",
+    "platform": "Solana",
+    "smart_contract_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "total_supply": 350000000,
+    "max_supply": 350000000,
+    "decimals": 9,
+    "official_website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
+    "block_explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "source_code": "https://github.com/Mastercyril/QSAM-quantum-token",
+    "community_socials": [
+      "https://twitter.com/13thchamber",
+      "https://t.me/quantumbitcoinpay"
+    ],
+    "project_launch_date": "2026-08-01",
+    "project_description": "QSAM (Quantum State Amplitude Modulation) is a quantum-native cryptocurrency utility token on Solana backed by 13th Chamber LLC. It bridges IBM Quantum computing hardware with blockchain decentralized finance, utilizing an 8-system quantum architecture with daily rewards and post-quantum encryption standards."
+  }
+}
