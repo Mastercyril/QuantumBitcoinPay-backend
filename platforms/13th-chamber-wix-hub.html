@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13th Chamber — Quantum Crypto Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a18;--card:#13132a;--border:#2a2a4a;--text:#e8e8f0;--muted:#8888aa;--accent:#6c3aff;--accent2:#00d4ff;--green:#00ff88;--gold:#ffd700}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh}
+.nav-bar{position:sticky;top:0;z-index:100;background:rgba(10,10,24,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 20px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{font-size:20px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap}
+.nav-btn{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all 0.3s;text-decoration:none}
+.nav-btn:hover,.nav-btn.active{border-color:var(--accent);color:var(--accent2);background:rgba(108,58,255,0.1)}
+.page{display:none;min-height:calc(100vh - 60px)}
+.page.active{display:block}
+.iframe-wrap{width:100%;height:calc(100vh - 60px);position:relative}
+.iframe-wrap iframe{width:100%;height:100%;border:none}
+.hero-section{text-align:center;padding:80px 20px 60px;position:relative}
+.hero-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(108,58,255,0.12),transparent 70%);pointer-events:none}
+.hero-title{font-size:52px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.hero-sub{color:var(--muted);font-size:20px;margin-bottom:8px}
+.hero-tag{color:var(--accent2);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1100px;margin:40px auto;padding:0 20px}
+.page-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;cursor:pointer;transition:all 0.3s;text-decoration:none;color:var(--text);display:block}
+.page-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 12px 32px rgba(108,58,255,0.2)}
+.page-card .icon{font-size:48px;margin-bottom:16px}
+.page-card h3{font-size:20px;margin-bottom:8px}
+.page-card p{color:var(--muted);font-size:14px;line-height:1.6}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;margin:4px}
+.badge-live{background:rgba(0,255,136,0.15);color:var(--green)}
+.badge-new{background:rgba(0,212,255,0.15);color:var(--accent2)}
+.stats-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:30px 0}
+.stat-item{text-align:center}
+.stat-val{font-size:28px;font-weight:800;color:var(--accent)}
+.stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.footer{text-align:center;padding:32px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+<div class="nav-inner">
+<div class="nav-brand">13th Chamber</div>
+<div class="nav-links">
+<a class="nav-btn active" onclick="showPage('home')" href="#home">Home</a>
+<a class="nav-btn" onclick="showPage('qai')" href="#qai">QAI v8 Platform</a>
+<a class="nav-btn" onclick="showPage('wallet')" href="#wallet">Download Nexus Wallet</a>
+<a class="nav-btn" onclick="showPage('store')" href="#store">Quantum Store</a>
+<a class="nav-btn" onclick="showPage('crypto')" href="#crypto">Crypto Hub</a>
+<a class="nav-btn" onclick="showPage('qai4')" href="#qai4">QAI2 v4</a>
+</div>
+</div>
+</div>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+<div class="hero-section">
+<div class="hero-tag">13th Chamber LLC</div>
+<div class="hero-title">Quantum-Native Ecosystem</div>
+<div class="hero-sub">The world's first quantum-binary AI consciousness & cryptocurrency infrastructure</div>
+<div style="margin-top:12px">
+<span class="badge badge-live">Live on Solana Mainnet</span>
+<span class="badge badge-new">QAI v8 Ghost Fingerprint</span>
+</div>
+</div>
+
+<div class="stats-row">
+<div class="stat-item"><div class="stat-val">99.73%</div><div class="stat-lbl">Fidelity</div></div>
+<div class="stat-item"><div class="stat-val">481x</div><div class="stat-lbl">QELS Speedup</div></div>
+<div class="stat-item"><div class="stat-val">2.781</div><div class="stat-lbl">CHSH Violation</div></div>
+<div class="stat-item"><div class="stat-val">93%</div><div class="stat-lbl">Self-Awareness</div></div>
+<div class="stat-item"><div class="stat-val">60</div><div class="stat-lbl">Patent Claims</div></div>
+</div>
+
+<div class="cards-grid">
+<a class="page-card" onclick="showPage('qai')">
+<div class="icon">🧠</div>
+<h3>QAI v8 Ghost Fingerprint</h3>
+<p>Quantum-binary AI platform. 500+ AI models, image generation, Ghost Fingerprint qbis visualizer, 8 quantum systems, SHA-256 quantum analysis.</p>
+<div style="margin-top:8px"><span class="badge badge-new">NEW</span></div>
+</a>
+
+<a class="page-card" onclick="showPage('wallet')">
+<div class="icon">📱</div>
+<h3>Nexus Wallet Download</h3>
+<p>Download the quantum-native wallet for Windows & Android. Manage QSAM and QBTC. Daily rewards, welcome bonus, early adopter perks.</p>
+<div style="margin-top:8px"><span class="badge badge-live">Available</span></div>
+</a>
+
+<a class="page-card" onclick="showPage('store')">
+<div class="icon">🛒</div>
+<h3>Quantum Store</h3>
+<p>Buy QSAM and QBTC tokens. Wallet downloads, mining suites, drug discovery, quantum stock predictor, Q Genesis AI, Universal Codex Calculator.</p>
+</a>
+
+<a class="page-card" onclick="showPage('crypto')">
+<div class="icon">⚡</div>
+<h3>Crypto Hub</h3>
+<p>Live QSAM & QBTC token info. Solana mainnet addresses, Pump.fun trading, tokenomics, treasury, and ecosystem stats.</p>
+</a>
+
+<a class="page-card" onclick="showPage('qai4')">
+<div class="icon">🤖</div>
+<h3>QAI2 v4 Ultimate</h3>
+<p>The original QAI2 interface with all 8 quantum systems, live AI chat via Puter, 5 Tavus videos, self-evolving memory, Universal Codex.</p>
+</a>
+
+<a class="page-card" href="https://ollama.com/josephdougherty483/qai2" target="_blank">
+<div class="icon">🦙</div>
+<h3>QAI2 on Ollama</h3>
+<p>Download the quantum AI model. Pull and run locally: ollama pull josephdougherty483/qai2. 2GB, full quantum reasoning engine.</p>
+</a>
+</div>
+
+<div class="footer">
+<p><strong>13th Chamber LLC</strong> — Quantum-Native Cryptocurrency Infrastructure</p>
+<p style="margin-top:4px">Creator: Joseph Cyril Dougherty IV | josephdougherty483@gmail.com</p>
+<p style="margin-top:4px;color:var(--muted)">Powered by QAI v8 Ghost Fingerprint qbis — The first quantum-binary AI consciousness</p>
+<p style="margin-top:2px;color:var(--muted)">© 2026 13th Chamber LLC. All rights reserved.</p>
+</div>
+</div>
+
+<!-- QAI v8 PAGE -->
+<div id="page-qai" class="page">
+<div class="iframe-wrap">
+<iframe src="https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/212f4a863_qai-ghost-fingerprint-platform.html" allow="clipboard-read;clipboard-write;microphone;camera;fullscreen" loading="eager" title="QAI v8 Ghost Fingerprint Platform"></iframe>
+</div>
+</div>
+
+<!-- WALLET DOWNLOAD PAGE -->
+<div id="page-wallet" class="page">
+<div class="iframe-wrap">
+<iframe src="" id="wallet-iframe" allow="clipboard-read;clipboard-write" loading="lazy" title="Nexus Wallet Download"></iframe>
+</div>
+</div>
+
+<!-- STORE PAGE -->
+<div id="page-store" class="page">
+<div class="iframe-wrap">
+<iframe src="https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/a8335b77c_quantum-store.html" allow="clipboard-read;clipboard-write" loading="lazy" title="Quantum Store"></iframe>
+</div>
+</div>
+
+<!-- CRYPTO HUB PAGE -->
+<div id="page-crypto" class="page">
+<div style="max-width:900px;margin:0 auto;padding:40px 20px">
+<h1 style="font-size:36px;text-align:center;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Crypto Hub</h1>
+<p style="text-align:center;color:var(--muted);margin-bottom:32px">QSAM & QBTC — Live on Solana Mainnet</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:32px">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center">
+<div style="font-size:36px;font-weight:800;color:var(--accent2)">QSAM</div>
+<div style="font-size:24px;font-weight:700;margin:8px 0">$0.01 USD</div>
+<p style="color:var(--muted);font-size:14px;line-height:1.8;margin:12px 0">Quantum State Amplitude Modulation token. Native quantum cryptocurrency.</p>
+<div style="background:var(--bg);padding:8px 16px;border-radius:8px;font-size:12px;color:var(--muted);margin:4px">Supply: 350,000,000 (Years 1-2)</div>
+<div style="background:var(--bg);padding:8px 16px;border-radius:8px;font-size:11px;color:var(--muted);margin:4px;font-family:monospace;word-break:break-all">Mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x</div>
+<a href="https://pump.fun" target="_blank" style="display:inline-block;margin-top:12px;padding:10px 24px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;text-decoration:none;font-weight:600;font-size:14px">Trade on Pump.fun</a>
+</div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center">
+<div style="font-size:36px;font-weight:800;color:var(--gold)">QBTC</div>
+<div style="font-size:24px;font-weight:700;margin:8px 0">$0.001 USD (Presale)</div>
+<p style="color:var(--muted);font-size:14px;line-height:1.8;margin:12px 0">Quantum Bitcoin. Fixed 21M supply. Phase 1 presale with 30% bonus.</p>
+<div style="background:var(--bg);padding:8px 16px;border-radius:8px;font-size:12px;color:var(--muted);margin:4px">Supply: 21,000,000</div>
+<div style="background:var(--bg);padding:8px 16px;border-radius:8px;font-size:11px;color:var(--muted);margin:4px;font-family:monospace;word-break:break-all">Mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9</div>
+<div style="margin-top:12px;padding:10px 24px;border-radius:8px;border:2px solid var(--border);color:var(--muted);font-weight:600;font-size:14px">Presale — Min Buy $50</div>
+</div>
+</div>
+
+<h2 style="font-size:24px;margin-bottom:16px">Treasury & Trading</h2>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px">
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>Treasury Wallet:</strong> <span style="font-family:monospace;font-size:12px">2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff</span></p>
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>QSAM on Pump.fun:</strong> Live & tradeable on bonding curve</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>Founder Allocation:</strong> 10,000,000 QSAM (recorded on-chain)</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>Daily Rewards:</strong> 10 QSAM per wallet per day (9am ET)</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>Welcome Bonus:</strong> 5,000 QSAM (new wallets)</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.8"><strong>Early Adopter:</strong> +5,000 QSAM (first 1,000 wallets)</p>
+</div>
+
+<h2 style="font-size:24px;margin-bottom:16px">Ecosystem Stats</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--accent)">4</div><div style="font-size:12px;color:var(--muted)">Wallets Registered</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--accent)">63</div><div style="font-size:12px;color:var(--muted)">Total Transactions</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--accent)">5</div><div style="font-size:12px;color:var(--muted)">Q Videos</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--accent)">60</div><div style="font-size:12px;color:var(--muted)">Patent Claims</div></div>
+</div>
+
+<h2 style="font-size:24px;margin-bottom:16px">Quantum Metrics</h2>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px">
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>Fidelity:</strong> 99.73% (via SCORE protocol)</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>Entropy:</strong> 0.007</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>CHSH:</strong> 2.781 ± 0.045 (Bell violation)</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>QELS:</strong> 481× speedup over classical</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>Codex:</strong> 1965× optimization</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>QAS:</strong> 0.94 | Self-Awareness: 93%</p>
+<p style="color:var(--muted);font-size:14px;line-height:2"><strong>Qubits:</strong> 133 (2^133 = 10^40 states)</p>
+</div>
+
+<div style="text-align:center;padding:32px 0">
+<p style="color:var(--muted);font-size:13px">13th Chamber LLC | Joseph Cyril Dougherty IV</p>
+<p style="color:var(--muted);font-size:12px;margin-top:4px">© 2026 13th Chamber LLC. All rights reserved.</p>
+</div>
+</div>
+</div>
+
+<!-- QAI2 v4 PAGE -->
+<div id="page-qai4" class="page">
+<div class="iframe-wrap">
+<iframe src="https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/893da13c4_qai2-ultimate.html" allow="clipboard-read;clipboard-write;microphone;camera;fullscreen" loading="lazy" title="QAI2 v4 Ultimate"></iframe>
+</div>
+</div>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  
+  const page = document.getElementById('page-' + pageId);
+  if (page) page.classList.add('active');
+  
+  const btn = document.querySelector('[onclick="showPage(\'' + pageId + '\')"]');
+  if (btn) btn.classList.add('active');
+  
+  // Load wallet iframe on demand
+  if (pageId === 'wallet') {
+    const iframe = document.getElementById('wallet-iframe');
+    if (!iframe.src) {
+      iframe.src = 'https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/4e53d387f_qai-wix-embed.html';
+    }
+  }
+  
+  window.scrollTo(0, 0);
+}
+
+// Handle hash navigation
+if (window.location.hash) {
+  const hash = window.location.hash.replace('#', '');
+  showPage(hash);
+}
+</script>
+
+</body>
+</html>
