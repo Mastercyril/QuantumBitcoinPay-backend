@@ -11,7 +11,7 @@
 - [ ] Birdeye auto-listing (after liquidity pool)
 
 ### Completed
-- [x] QSAM deployed on Solana mainnet (mint: 5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x)
+- [x] QSAM deployed on Solana mainnet (mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x)
 - [x] QBTC deployed on Solana mainnet (mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9)
 - [x] Token metadata files created (metadata/qsam-metadata.json, metadata/qbtc-metadata.json)
 - [x] Token info JSON for listings (token-info.json)
@@ -26,7 +26,7 @@
 - [x] Wix order token distribution active
 
 ## Token Info
-- QSAM: 350M supply, $0.01, mint 5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x
+- QSAM: 350M supply, $0.01, mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
 - QBTC: 21M supply, $0.001 (Phase 1), mint EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
 - Treasury: 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
 - Quantum speedup: 381x verified on IBM hardware
