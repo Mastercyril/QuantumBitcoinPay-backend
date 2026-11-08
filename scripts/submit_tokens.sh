@@ -2,10 +2,11 @@
 # QSAM/QBTC Token Submission Script
 # Push tokens to all crypto tracking platforms
 
-QSAM_MINT="5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x"
+QSAM_MINT="5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x"       # ecosystem mint (treasury-held, 350M, 9 dec)
+QSAM_TRADING_MINT="48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN" # pump.fun trading mint (1B, 6 dec) — the listable one
 QBTC_MINT="EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9"
 TREASURY="2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff"
-WEBSITE="https://quantumbitcoinpay.com"
+WEBSITE="https://13thchamberllc.com"
 GITHUB="https://github.com/Mastercyril/QuantumBitcoinPay-backend"
 
 echo "============================================"

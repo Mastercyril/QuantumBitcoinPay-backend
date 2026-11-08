@@ -1,5 +1,22 @@
 # CoinGecko Listing Submission Findings — August 26, 2026
 
+> **⚠️ UPDATE (Nov 8, 2026): DO NOT SUBMIT WITH THE 5nHg MINT.**
+> The fields below list contract `5nHg...M9x` (350M, 9 decimals) — that mint has **no liquidity pool and no trading**.
+> CoinGecko auto-rejects any token that is not actively trading on a tracked exchange.
+>
+> **Submit with the TRADING mint instead:**
+> - Contract address: `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
+> - Decimals: 6 | Total supply: 1,000,000,000 | Standard: Solana Token-2022
+> - Market: pump.fun AMM, QSAM/SOL pair — https://dexscreener.com/solana/DmmDdbYs3SzWhopJ4D7kt3mpo6HV9u8B8vuk97YBcVQn
+> - Explorer: https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
+> - Already indexed on DexScreener and GeckoTerminal (CoinGecko's own DEX tracker).
+> - Website: https://13thchamberllc.com (Wix is a CoinGecko rejection reason — this site must move to Vercel before applying).
+> - Supply/price facts to pull live at submission time: https://api.dexscreener.com/latest/dex/tokens/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
+>
+> Naming correction: QSAM = "Quantum System Access Module" (per whitepaper v2.0). The description below says
+> "Quantum Secure Authentication Matrix" — fix that before submitting; inconsistent naming causes rejections.
+> Also: the description says "launched via fair distribution on Pump.fun" for the 5nHg mint — that is the 48YZ mint's story.
+
 ## Status: In Progress (Manual Completion Required)
 
 ### Form URL

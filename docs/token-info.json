@@ -2,7 +2,7 @@
   "qsam": {
     "name": "QSAM Quantum Token",
     "symbol": "QSAM",
-    "description": "Quantum-native SPL token on Solana backed by the 13th Chamber quantum ecosystem, featuring 8 proprietary quantum systems, IBM Quantum hardware integration with 381x verified speedup, daily rewards (10 QSAM/day), and 5,000 QSAM welcome bonus.",
+    "description": "QSAM (Quantum System Access Module) is the native utility token of the 13th Chamber LLC quantum ecosystem on Solana. The ecosystem runs on IBM Quantum hardware and combines eight proprietary quantum systems (QSAM encoding, SCORE error correction, ESCORT routing, Q-SINK post-quantum security, QELS lattice encryption, ARQQ stabilization, S-Corner and Phase Modulation) with a hybrid ARIMA-LSTM quantum AI engine. QSAM is a Solana SPL token with a fixed 350,000,000 supply, 9 decimals, treasury-held mint authority, and a separately tradable pump.fun market pair on mainnet.",
     "blockchain": "Solana",
     "token_standard": "Solana SPL",
     "mint_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
@@ -11,20 +11,20 @@
     "decimals": 9,
     "base_price_usd": 0.01,
     "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
-    "website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
+    "website": "https://13thchamberllc.com",
     "secondary_websites": [
       "https://quantumbitcoinpay.com",
       "https://13thchamberinc.com",
       "https://13thchamberllc.com",
       "https://13thchamber.puter.site"
     ],
-    "github": "https://github.com/Mastercyril/QSAM-quantum-token",
+    "github": "https://github.com/Mastercyril/QAI-Neural-Inspired-Quantum-Enhanced-",
     "github_backend": "https://github.com/Mastercyril/QuantumBitcoinPay-backend",
     "explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
     "solana_explorer": "https://explorer.solana.com/address/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
     "twitter": "https://twitter.com/13thchamber",
     "telegram": "https://t.me/quantumbitcoinpay",
-    "logo_uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png",
+    "logo_uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg",
     "logo_svg": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg",
     "creator": "13th Chamber LLC",
     "founder": "Joseph Dougherty IV (Joseph Cyril Dougherty IV)",
@@ -36,12 +36,20 @@
       "AI",
       "Utility Token",
       "Rewards"
-    ]
+    ],
+    "trading_mint": {
+      "address": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+      "supply": 1000000000,
+      "decimals": 6,
+      "standard": "Solana Token-2022",
+      "market": "pump.fun AMM, QSAM/SOL pair",
+      "note": "The actively traded market mint. CoinGecko/CMC listings must reference THIS mint because they require an active market; the 5nHg ecosystem mint has no pool."
+    }
   },
   "qbtc": {
     "name": "QBTC Quantum Bitcoin",
     "symbol": "QBTC",
-    "description": "Quantum Bitcoin \u2014 post-quantum secured cryptocurrency on Solana with Phase 1 presale offering 30% bonus, acting as a post-quantum store of value.",
+    "description": "QBTC (Quantum Bitcoin) is a post-quantum store-of-value token on Solana from 13th Chamber LLC, secured by the Q-SINK cryptographic shield and QELS lattice-based encryption. Fixed supply of 21,000,000 QBTC on the Solana SPL Token Program. Not for sale \u2014 valuation anchor for the 13th Chamber ecosystem.",
     "blockchain": "Solana",
     "token_standard": "Solana SPL",
     "mint_address": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
@@ -50,7 +58,7 @@
     "decimals": 9,
     "presale_price_usd": 0.001,
     "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
-    "website": "https://quantumbitcoinpay.com",
+    "website": "https://13thchamberllc.com",
     "categories": [
       "Quantum Computing",
       "Bitcoin",

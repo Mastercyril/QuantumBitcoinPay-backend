@@ -12,7 +12,7 @@ npm install -g @metaplex-foundation/mpl-cli
 
 # Create metadata for QSAM
 mpl create_metadata_account \
-  --mint 5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x \
+  --mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x \
   --name "QSAM" \
   --symbol "QSAM" \
   --uri "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/metadata/metaplex-qsam.json" \

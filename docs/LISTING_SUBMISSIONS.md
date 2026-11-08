@@ -3,18 +3,19 @@
 ## Token Listing Tasks
 
 ### In Progress
-- [ ] CoinGecko listing (form blocked by Cloudflare, need manual submission)
-- [ ] CoinMarketCap listing (form URL changed, need manual submission)
+- [ ] CoinGecko listing (form requires login + Cloudflare captcha; submit with the 48YZ TRADING mint — see docs/coingecko-submission-findings.md update)
+- [ ] CoinMarketCap listing (needs real volume first — pair volume is currently near zero)
 - [ ] Raydium liquidity pool (need ~0.5-1 SOL in treasury)
-- [ ] DexScreener auto-listing (after liquidity pool)
-- [ ] DEXTools auto-listing (after liquidity pool)
-- [ ] Birdeye auto-listing (after liquidity pool)
+- [ ] Vercel website rebuild (Wix is an automatic CoinGecko rejection reason)
 
 ### Completed
-- [x] QSAM deployed on Solana mainnet (mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x)
+- [x] QSAM deployed on Solana mainnet (ecosystem mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x — treasury-held, 350M, 9 dec)
+- [x] QSAM trading mint live on pump.fun (48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN — 1B, 6 dec, Token-2022)
 - [x] QBTC deployed on Solana mainnet (mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9)
+- [x] DexScreener auto-listing — VERIFIED LIVE Nov 8 2026 (QSAM/SOL pump.fun pair indexed)
+- [x] GeckoTerminal (CoinGecko DEX tracker) — VERIFIED LIVE Nov 8 2026
 - [x] Token metadata files created (metadata/qsam-metadata.json, metadata/qbtc-metadata.json)
-- [x] Token info JSON for listings (token-info.json)
+- [x] Token info JSON for listings (token-info.json) — corrected Nov 8 2026 (dead links, mint typo)
 - [x] QSAM logo SVG (assets/qsam-logo.svg)
 - [x] Quantum crypto whitepaper uploaded (whitepaper.md)
 - [x] QIOF documentation uploaded (docs/quantum-framework.md)
@@ -22,7 +23,6 @@
 - [x] QAI2 AI engine running daily reports
 - [x] Daily metrics email automation active
 - [x] Daily quantum simulation active
-- [x] Daily QSAM rewards distribution active
 - [x] Wix order token distribution active
 
 ## Token Info
