@@ -11,7 +11,7 @@ The supplied backend market feed returned zero values: SOL $0.00 (0.00% 24h), BT
 - Quantum states: `10^40`
 
 ## QAI2 evolution insight
-As of August 28, 2026, the ecosystem continues to evolve around QSAM and QBTC on Solana. QSAM has a stated supply of 350M and mint `5nHg43TTkmCafvUPpjnu57hWMRXUheN3CFdDuzdQM9x`; QBTC has a stated supply of 21M and mint `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9`. The QSAM formula remains the conceptual bridge between binary input and quantum-state representation.
+As of August 28, 2026, the ecosystem continues to evolve around QSAM and QBTC on Solana. QSAM has a stated supply of 350M and mint `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`; QBTC has a stated supply of 21M and mint `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9`. The QSAM formula remains the conceptual bridge between binary input and quantum-state representation.
 
 ## Quantum metrics
 - QAS: 0.96

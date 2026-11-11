@@ -2,26 +2,32 @@
   "qsam": {
     "name": "QSAM Quantum Token",
     "symbol": "QSAM",
-    "description": "QSAM (Quantum System Access Module) is the native utility token of the 13th Chamber LLC quantum ecosystem on Solana. The ecosystem runs on IBM Quantum hardware and combines eight proprietary quantum systems (QSAM encoding, SCORE error correction, ESCORT routing, Q-SINK post-quantum security, QELS lattice encryption, ARQQ stabilization, S-Corner and Phase Modulation) with a hybrid ARIMA-LSTM quantum AI engine. QSAM is a Solana SPL token with a fixed 350,000,000 supply, 9 decimals, treasury-held mint authority, and a separately tradable pump.fun market pair on mainnet.",
+    "description": "QSAM (Quantum System Access Module) is the native utility token of the 13th Chamber LLC quantum ecosystem on Solana. The canonical token is a Solana Token-2022 mint with a fixed supply of 1,000,000,000, 6 decimals, mint authority revoked, and freeze authority revoked. It launched on pump.fun. Post-quantum cryptography for the wallet is on the roadmap and is not implemented.",
     "blockchain": "Solana",
-    "token_standard": "Solana SPL",
-    "mint_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
-    "total_supply": 350000000,
-    "max_supply": 350000000,
-    "decimals": 9,
-    "base_price_usd": 0.01,
+    "token_standard": "Solana Token-2022",
+    "mint_address": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "total_supply": 1000000000,
+    "max_supply": 1000000000,
+    "decimals": 6,
+    "supply_model": "fixed",
+    "mint_authority": "revoked",
+    "freeze_authority": "revoked",
+    "launched_on": "pump.fun",
+    "market": "pump.fun, QSAM/SOL",
+    "post_quantum_cryptography": "roadmap — not implemented in the wallet",
     "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
-    "website": "https://13thchamberllc.com",
+    "website": "https://13thchamberllc.com/qryptocurrency/",
     "secondary_websites": [
-      "https://quantumbitcoinpay.com",
+      "https://qsam.13thchamberllc.com",
       "https://13thchamberinc.com",
       "https://13thchamberllc.com",
       "https://13thchamber.puter.site"
     ],
     "github": "https://github.com/Mastercyril/QAI-Neural-Inspired-Quantum-Enhanced-",
     "github_backend": "https://github.com/Mastercyril/QuantumBitcoinPay-backend",
-    "explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
-    "solana_explorer": "https://explorer.solana.com/address/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "explorer": "https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "solana_explorer": "https://explorer.solana.com/address/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "pump_fun": "https://pump.fun/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
     "twitter": "https://twitter.com/13thchamber",
     "telegram": "https://t.me/quantumbitcoinpay",
     "logo_uri": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg",
@@ -37,28 +43,28 @@
       "Utility Token",
       "Rewards"
     ],
-    "trading_mint": {
-      "address": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
-      "supply": 1000000000,
-      "decimals": 6,
-      "standard": "Solana Token-2022",
-      "market": "pump.fun AMM, QSAM/SOL pair",
-      "note": "The actively traded market mint. CoinGecko/CMC listings must reference THIS mint because they require an active market; the 5nHg ecosystem mint has no pool."
+    "legacy": {
+      "label": "Non-canonical legacy mint. Do not use for CoinGecko, CoinMarketCap, or any other listing.",
+      "mint_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+      "total_supply": 350000000,
+      "decimals": 9,
+      "token_standard": "Solana SPL",
+      "note": "Earlier ecosystem mint. Superseded by the canonical Token-2022 mint."
     }
   },
   "qbtc": {
     "name": "QBTC Quantum Bitcoin",
     "symbol": "QBTC",
-    "description": "QBTC (Quantum Bitcoin) is a post-quantum store-of-value token on Solana from 13th Chamber LLC, secured by the Q-SINK cryptographic shield and QELS lattice-based encryption. Fixed supply of 21,000,000 QBTC on the Solana SPL Token Program. Not for sale \u2014 valuation anchor for the 13th Chamber ecosystem.",
+    "description": "QBTC (Quantum Bitcoin) is a store-of-value token on Solana from 13th Chamber LLC. Fixed supply of 21,000,000 QBTC on the Solana SPL Token Program. Post-quantum cryptography is on the roadmap and is not implemented in the wallet. Not for sale — valuation anchor for the 13th Chamber ecosystem.",
     "blockchain": "Solana",
     "token_standard": "Solana SPL",
     "mint_address": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
     "total_supply": 21000000,
     "max_supply": 21000000,
     "decimals": 9,
-    "presale_price_usd": 0.001,
     "treasury_address": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
-    "website": "https://13thchamberllc.com",
+    "website": "https://13thchamberllc.com/qryptocurrency/",
+    "post_quantum_cryptography": "roadmap — not implemented in the wallet",
     "categories": [
       "Quantum Computing",
       "Bitcoin",
@@ -71,12 +77,13 @@
     "founder": "Joseph Cyril Dougherty IV",
     "contact_email": "josephdougherty483@gmail.com",
     "paypal_checkout": "https://www.paypal.com/ncp/payment/K56PDTWN9FR26",
-    "wallet_apps": "Nexus Wallet (Windows & Android)"
+    "wallet_apps": "Nexus Wallet (Windows & Android)",
+    "wallet_post_quantum_cryptography": "roadmap — the wallet is not quantum-proof"
   },
   "quantum_tech": {
     "verified_speedup": "381x on IBM Quantum hardware",
     "patent_claims": "50-claim patent portfolio",
-    "chsh_parameter": "2.781 \u00b1 0.045",
+    "chsh_parameter": "2.781 ± 0.045",
     "score_protocol": "50x fidelity improvement (95.34% -> 99.73%)",
     "ibm_backends": [
       "ibm_torino",
@@ -92,38 +99,18 @@
       "S-Corner",
       "ARQQ",
       "Phase Modulation"
-    ]
+    ],
+    "post_quantum_cryptography": "roadmap — not implemented in the wallet"
   },
   "tokenomics": {
     "qsam": {
-      "total_supply": 350000000,
-      "distribution": [
-        {
-          "category": "Ecosystem Utility & Daily Rewards Pool",
-          "percentage": 40,
-          "amount": 140000000
-        },
-        {
-          "category": "Corporate Treasury & Hardware Reserve (13th Chamber LLC)",
-          "percentage": 25,
-          "amount": 87500000
-        },
-        {
-          "category": "DEX Liquidity & Market Making",
-          "percentage": 15,
-          "amount": 52500000
-        },
-        {
-          "category": "Team & Founder Vested Allocation",
-          "percentage": 10,
-          "amount": 35000000
-        },
-        {
-          "category": "Community Early Adopter & Presale Incentive",
-          "percentage": 10,
-          "amount": 35000000
-        }
-      ],
+      "total_supply": 1000000000,
+      "max_supply": 1000000000,
+      "decimals": 6,
+      "supply_model": "fixed",
+      "mint_authority": "revoked",
+      "freeze_authority": "revoked",
+      "launched_on": "pump.fun",
       "utility": [
         "Daily holder rewards (10 QSAM/wallet/day)",
         "Nexus Wallet welcome bonus (5,000 QSAM)",
@@ -132,41 +119,49 @@
       ]
     },
     "qbtc": {
-      "total_supply": 21000000,
-      "presale_phase_1": "$0.001 USD per QBTC (30% presale bonus, $50 minimum)"
+      "total_supply": 21000000
     }
   },
   "coingecko_submission": {
     "token_name": "QSAM Quantum Token",
     "token_symbol": "QSAM",
     "blockchain": "Solana",
-    "contract_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
-    "decimals": 9,
-    "official_website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
-    "block_explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "contract_address": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "token_standard": "Token-2022",
+    "decimals": 6,
+    "total_supply": 1000000000,
+    "max_supply": 1000000000,
+    "mint_authority": "revoked",
+    "freeze_authority": "revoked",
+    "launched_on": "pump.fun",
+    "official_website": "https://13thchamberllc.com/qryptocurrency/",
+    "block_explorer": "https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
     "github_repository": "https://github.com/Mastercyril/QSAM-quantum-token",
     "twitter": "https://twitter.com/13thchamber",
     "telegram": "https://t.me/quantumbitcoinpay",
     "logo_url": "https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png",
-    "detailed_description": "QSAM Quantum Token is a quantum-native SPL token on Solana created by 13th Chamber LLC (Joseph Dougherty IV). It powers the 13th Chamber quantum ecosystem, which incorporates 8 proprietary quantum systems (SCORE, ESCORT, QELS, CHSH, Q-SINK, S-Corner, ARQQ, Phase Modulation) and IBM Quantum hardware integration (ibm_torino, ibm_sherbrooke, ibm_brisbane) achieving a verified 381x quantum speedup. Token holders receive 10 QSAM daily rewards per wallet and a 5,000 QSAM welcome bonus when registering on the Nexus Wallet."
+    "detailed_description": "QSAM Quantum Token is the canonical Solana Token-2022 utility token of 13th Chamber LLC (Joseph Dougherty IV). Fixed supply is 1,000,000,000 with 6 decimals. Mint authority and freeze authority are revoked. The token launched on pump.fun. Contract: 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN. Post-quantum cryptography for the wallet is on the roadmap and is not implemented. Do not submit the legacy mint."
   },
   "coinmarketcap_submission": {
     "project_name": "QSAM Quantum Token",
     "symbol": "QSAM",
-    "crypto_type": "Token (SPL)",
+    "crypto_type": "Token (Token-2022)",
     "platform": "Solana",
-    "smart_contract_address": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
-    "total_supply": 350000000,
-    "max_supply": 350000000,
-    "decimals": 9,
-    "official_website": "https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html",
-    "block_explorer": "https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "smart_contract_address": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "total_supply": 1000000000,
+    "max_supply": 1000000000,
+    "decimals": 6,
+    "mint_authority": "revoked",
+    "freeze_authority": "revoked",
+    "launched_on": "pump.fun",
+    "official_website": "https://13thchamberllc.com/qryptocurrency/",
+    "block_explorer": "https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
     "source_code": "https://github.com/Mastercyril/QSAM-quantum-token",
     "community_socials": [
       "https://twitter.com/13thchamber",
       "https://t.me/quantumbitcoinpay"
     ],
     "project_launch_date": "2026-08-01",
-    "project_description": "QSAM (Quantum State Amplitude Modulation) is a quantum-native cryptocurrency utility token on Solana backed by 13th Chamber LLC. It bridges IBM Quantum computing hardware with blockchain decentralized finance, utilizing an 8-system quantum architecture with daily rewards and post-quantum encryption standards."
+    "project_description": "QSAM (Quantum System Access Module) is the canonical Solana Token-2022 utility token of 13th Chamber LLC. Fixed supply is 1,000,000,000 with 6 decimals, mint and freeze authority are revoked, and the token launched on pump.fun. Post-quantum cryptography is on the roadmap and is not implemented in the wallet."
   }
 }

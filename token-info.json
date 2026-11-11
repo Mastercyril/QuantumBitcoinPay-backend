@@ -1,1 +1,32 @@
-{"qsam":{"name":"QSAM Quantum Token","symbol":"QSAM","mint":"5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x","supply":350000000,"decimals":9,"price":0.01,"blockchain":"solana"},"qbtc":{"name":"Quantum Bitcoin","symbol":"QBTC","mint":"EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9","supply":21000000,"decimals":9,"price":0.001,"blockchain":"solana"},"treasury":"2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff","network":"mainnet-beta"}
+{
+  "qsam": {
+    "name": "QSAM Quantum Token",
+    "symbol": "QSAM",
+    "mint": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+    "token_standard": "Token-2022",
+    "supply": 1000000000,
+    "decimals": 6,
+    "mint_authority": "revoked",
+    "freeze_authority": "revoked",
+    "launched_on": "pump.fun",
+    "blockchain": "solana",
+    "website": "https://13thchamberllc.com/qryptocurrency/",
+    "legacy": {
+      "label": "Non-canonical legacy mint. Do not use for CoinGecko, CoinMarketCap, or any other listing.",
+      "mint": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+      "supply": 350000000,
+      "decimals": 9,
+      "token_standard": "SPL"
+    }
+  },
+  "qbtc": {
+    "name": "Quantum Bitcoin",
+    "symbol": "QBTC",
+    "mint": "EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9",
+    "supply": 21000000,
+    "decimals": 9,
+    "blockchain": "solana"
+  },
+  "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+  "network": "mainnet-beta"
+}

@@ -49,7 +49,7 @@ To enable Ox Alpha reasoning, get a free OpenRouter API key:
 - Post-quantum cryptography
 
 Contact: josephdougherty483@gmail.com | questions@13thchamberllc.com
-Sites: 13thchamberllc.com | quantumqsam.com | quantumbitcoinpay.com
+Sites: https://13thchamberllc.com/qryptocurrency/ | https://qsam.13thchamberllc.com | quantumqsam.com
 
 ---
 

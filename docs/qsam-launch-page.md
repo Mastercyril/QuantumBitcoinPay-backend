@@ -3,10 +3,10 @@
 
 ![13th Chamber LLC](REPLACE_WITH_MEDIA_LIBRARY_IMAGE_URL)
 
-**Quantum Secured Asset Management (QSAM)** is now available at launch pricing.
+**QSAM (Quantum System Access Module)** is the canonical Solana token. Do not quote a fixed dollar price. Post-quantum cryptography is roadmap and is not implemented in the wallet.
 
 <div style="margin:18px 0;">
-  <a href="https://www.paypal.com/ncp/payment/K56PDTWN9FR26" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#0070ba;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;margin-right:10px;">Buy QSAM Now – $0.01</a>
+  <a href="https://www.paypal.com/ncp/payment/K56PDTWN9FR26" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#0070ba;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;margin-right:10px;">PayPal checkout</a>
   <a href="#wallet-downloads" style="display:inline-block;padding:14px 22px;background:#111827;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;margin-right:10px;">Download Wallet</a>
   <a href="#whitepaper" style="display:inline-block;padding:14px 22px;background:#0f766e;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;">Read Whitepaper</a>
 </div>
@@ -15,9 +15,9 @@
 
 ## Launch Overview
 
-**QSAM (Quantum Secured Asset Management)** is the utility token for the QSAM ecosystem, designed for secure participation, reward distribution, and future platform integrations across wallet and backend infrastructure.
+**QSAM (Quantum System Access Module)** is the utility token for the QSAM ecosystem. The canonical mint is `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN` (Solana Token-2022, 6 decimals, fixed supply 1,000,000,000, mint and freeze authority revoked, launched on pump.fun). The legacy mint `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x` is not canonical. The wallet is not quantum-proof. Post-quantum cryptography is roadmap.
 
-- **Launch Price:** **$0.01 USD per QSAM**
+- **Website:** https://13thchamberllc.com/qryptocurrency/
 - **Checkout Method:** PayPal
 - **Official Checkout Link:** https://www.paypal.com/ncp/payment/K56PDTWN9FR26
 
@@ -25,9 +25,10 @@
 
 ## Tokenomics
 
-- **Release Schedule (Years 1–2):** 350,000,000 QSAM per year
-- **Post Year-2 Schedule:** 350,000,000 QSAM every 3 years
-- **Implied Annual Release Value at Launch Price ($0.01):** **$3,500,000**
+- **Canonical supply:** 1,000,000,000 QSAM, fixed
+- **Decimals:** 6
+- **Standard:** Solana Token-2022
+- **Authorities:** mint and freeze revoked
 
 ### Reward Structure
 - **10 QSAM** per standard eligible job

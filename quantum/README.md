@@ -71,8 +71,8 @@ Human-readable quantum encoding report.
 - **Hilbert Space Dimension:** 2^n per encoded data
 
 ## NIST Compliance
-- **Post-Quantum Cryptography:** CRYSTALS-Dilithium, CRYSTALS-KYBER (NIST PQC 2024)
-- **S-Corner Protocol:** Proprietary quantum-resistant layer
+- **Post-quantum cryptography:** roadmap. CRYSTALS-Dilithium and CRYSTALS-KYBER are not implemented in the wallet.
+- **S-Corner Protocol:** planned quantum-resistant layer, not a current wallet control
 - **NIST AI RMF 1.0 Alignment:** Validity & Reliability (99.73% fidelity), Safety & Resilience (348x error suppression)
 
 ## Creator

@@ -3,14 +3,14 @@
 ## Token Listing Tasks
 
 ### In Progress
-- [ ] CoinGecko listing (form requires login + Cloudflare captcha; submit with the 48YZ TRADING mint — see docs/coingecko-submission-findings.md update)
+- [ ] CoinGecko listing (form requires login + Cloudflare captcha; submit the canonical mint 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN — see docs/coingecko-submission-findings.md)
 - [ ] CoinMarketCap listing (needs real volume first — pair volume is currently near zero)
 - [ ] Raydium liquidity pool (need ~0.5-1 SOL in treasury)
 - [ ] Vercel website rebuild (Wix is an automatic CoinGecko rejection reason)
 
 ### Completed
-- [x] QSAM deployed on Solana mainnet (ecosystem mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x — treasury-held, 350M, 9 dec)
-- [x] QSAM trading mint live on pump.fun (48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN — 1B, 6 dec, Token-2022)
+- [x] Canonical QSAM live on pump.fun (48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN — Token-2022, 1,000,000,000 fixed supply, 6 decimals, mint and freeze authority revoked)
+- [x] Legacy mint retained only as non-canonical (5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x — 350M, 9 decimals). Do not submit it.
 - [x] QBTC deployed on Solana mainnet (mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9)
 - [x] DexScreener auto-listing — VERIFIED LIVE Nov 8 2026 (QSAM/SOL pump.fun pair indexed)
 - [x] GeckoTerminal (CoinGecko DEX tracker) — VERIFIED LIVE Nov 8 2026
@@ -26,8 +26,11 @@
 - [x] Wix order token distribution active
 
 ## Token Info
-- QSAM: 350M supply, $0.01, mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
-- QBTC: 21M supply, $0.001 (Phase 1), mint EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
+- QSAM (canonical): 1,000,000,000 fixed supply, 6 decimals, Token-2022, mint and freeze authority revoked, launched on pump.fun, mint 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
+- QSAM legacy (do not list): 350,000,000 supply, 9 decimals, mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
+- QBTC: 21,000,000 supply, mint EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
+- Website: https://13thchamberllc.com/qryptocurrency/
+- Post-quantum cryptography: roadmap, not implemented in the wallet
 - Treasury: 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
 - Quantum speedup: 381x verified on IBM hardware
 - Patent: 50 claims

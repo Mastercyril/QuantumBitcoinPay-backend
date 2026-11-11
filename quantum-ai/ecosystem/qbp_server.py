@@ -1,6 +1,6 @@
 ﻿# ============================================
 # QuantumBitcoinPay - Dell Backend Server
-# Domain: quantumbitcoinpay.com
+# Domain: qsam.13thchamberllc.com
 # File: qbp_server.py
 # Created: 2/25/2026
 # ============================================
@@ -14,7 +14,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Live domain - no old URLs
-WIX_BASE = "https://www.quantumbitcoinpay.com/_functions"
+WIX_BASE = "https://qsam.13thchamberllc.com"
 DB_PATH = r"C:\Users\josep\OneDrive\Desktop\quantumpay_ecosystem\quantumpay.db"
 
 # ─────────────────────────────────────────
@@ -105,7 +105,7 @@ def ping():
     return jsonify({
         "status": "ONLINE",
         "name": "QuantumBitcoinPay Dell Backend",
-        "domain": "quantumbitcoinpay.com",
+        "domain": "qsam.13thchamberllc.com",
         "timestamp": datetime.now().isoformat(),
         "version": "2.0.0",
         "endpoints": ["/prices", "/market", "/validate", "/wallets", "/tx", "/ping"]
@@ -116,6 +116,6 @@ if __name__ == '__main__':
     print("=" * 50)
     print("  QuantumBitcoinPay Dell Server STARTING...")
     print("  URL: http://localhost:5050")
-    print("  Domain: quantumbitcoinpay.com")
+    print("  Domain: qsam.13thchamberllc.com")
     print("=" * 50)
     app.run(host='0.0.0.0', port=5050, debug=True)
