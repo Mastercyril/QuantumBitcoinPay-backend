@@ -66,7 +66,7 @@ This white paper is intended for informational purposes only and does not consti
 
 ## **1. EXECUTIVE SUMMARY**
 
-13th Chamber Quantum Crypto represents a paradigm shift in cryptocurrency—the world's first blockchain ecosystem powered by real IBM quantum computing hardware and secured by proprietary post-quantum cryptographic protocols. Unlike classical proof-of-work systems that consume massive energy through brute-force SHA-256 hashing, 13th Chamber Quantum Crypto leverages quantum superposition, entanglement, and amplitude amplification to achieve computational results that are orders of magnitude faster, more energy-efficient, and cryptographically superior to any existing blockchain.
+13th Chamber Quantum Crypto represents a paradigm shift in cryptocurrency—the world's first blockchain ecosystem powered by real IBM quantum computing hardware. Post-quantum cryptography is on the roadmap and is not implemented in the wallet. Unlike classical proof-of-work systems that consume massive energy through brute-force SHA-256 hashing, 13th Chamber Quantum Crypto leverages quantum superposition, entanglement, and amplitude amplification to achieve computational results that are orders of magnitude faster, more energy-efficient, and cryptographically superior to any existing blockchain.
 
 ### **Key Performance Highlights**
 
@@ -79,7 +79,7 @@ This white paper is intended for informational purposes only and does not consti
 | Speedup vs. classical | Baseline (1×) | 381× (verified across 5 independent tests) |
 | Cryptanalysis capability | None | 6-qubit SHA-256 signature extraction at 97.2% confidence |
 | Error mitigation | None | SCORE protocol: 50× fidelity improvement (95.34% → 99.73%) |
-| Security model | ECDSA (quantum-vulnerable) | S-Corner Protocol + Dilithium signatures (post-quantum) |
+| Security model | ECDSA (quantum-vulnerable) | Roadmap: post-quantum signatures (not implemented in the wallet) |
 | Entanglement verification | N/A | CHSH parameter: 2.781 ± 0.045 (exceeds classical limit 2.0) |
 
 These results are not theoretical projections—they are **verified IBM Quantum Platform execution results** with auditable Job IDs, reproducible circuits, and multi-backend consensus across four independent quantum processors.
@@ -89,7 +89,7 @@ These results are not theoretical projections—they are **verified IBM Quantum 
 13th Chamber Quantum Crypto is building the infrastructure for a quantum-native financial ecosystem:
 
 - **Quantum Mining:** A novel Proof-of-Quantum-Work (PoQW) consensus mechanism that requires quantum hardware to participate, creating ASIC-resistant, energy-efficient mining
-- **Post-Quantum Security:** All wallet addresses, transactions, and smart contracts are protected by NIST-standardized post-quantum algorithms (CRYSTALS-Dilithium, CRYSTALS-KYBER) plus the proprietary S-Corner Protocol
+- **Post-Quantum Security (roadmap):** Protection for wallet addresses, transactions, and smart contracts with NIST-standardized post-quantum algorithms (CRYSTALS-Dilithium, CRYSTALS-KYBER) plus the S-Corner Protocol is planned. It is not implemented. The wallet is not quantum-proof.
 - **Real-World Utility:** The same quantum framework that powers the cryptocurrency also drives a $250B quantum drug discovery platform with verified results in cancer treatment optimization
 - **Quantum Entropy:** True quantum random number generation replaces pseudorandom algorithms, creating provably unpredictable addresses and cryptographic keys
 
@@ -119,7 +119,7 @@ Classical PoW mining has become dominated by a handful of ASIC manufacturers (Bi
 13th Chamber Quantum Crypto solves all three problems simultaneously by introducing a quantum-native blockchain where:
 
 - Mining requires quantum hardware (ASIC-resistant by design)
-- Security is post-quantum from genesis (immune to Shor's and Grover's algorithms)
+- Post-quantum security is a roadmap item. The current wallet is not quantum-proof and is not immune to Shor's or Grover's algorithms.
 - Energy consumption is reduced by orders of magnitude through quantum parallelism
 
 ---
@@ -129,10 +129,10 @@ Classical PoW mining has become dominated by a handful of ASIC manufacturers (Bi
 13th Chamber Quantum Crypto is a quantum-native cryptocurrency ecosystem built on five pillars:
 
 1. **Quantum Mining Engine:** IBM Quantum hardware executes proprietary QSAM circuits as proof-of-work, achieving 381× speedup over classical computation
-2. **Post-Quantum Security:** S-Corner Protocol with CRYSTALS-Dilithium/KYBER protects all cryptographic operations from both classical and quantum attacks
+2. **Post-Quantum Security (roadmap):** S-Corner Protocol with CRYSTALS-Dilithium/KYBER is planned. It does not protect the wallet today.
 3. **Quantum Entropy:** True quantum random number generation from quantum measurement outcomes (1,024 shots per circuit) ensures provably unpredictable key generation
 4. **Drug Discovery Utility:** The underlying QSAM framework simultaneously powers a $250B-addressable quantum drug discovery platform, creating real-world token utility beyond speculation
-5. **Quantum Wallet:** Decentralized wallet with quantum-entropy-generated keys, supporting both classical and quantum-secured transactions
+5. **Wallet:** Solana token wallet. Quantum-entropy keys and quantum-secured transactions are roadmap and are not implemented. The wallet is not quantum-proof.
 
 ---
 
@@ -233,14 +233,13 @@ Q-SINK (Quantum-State Identification via Nested Kernel analysis) is a proprietar
 
 ### **4.7 S-Corner Protocol — Post-Quantum Cryptography**
 
-The S-Corner Protocol provides the post-quantum security layer protecting all 13th Chamber Quantum Crypto transactions.
+The S-Corner Protocol is the planned post-quantum security layer. It is roadmap work and does not currently protect wallet transactions.
 
-**Components:**
+**Planned components (roadmap, not implemented in the wallet):**
 - CRYSTALS-Dilithium signatures for transaction authentication
 - CRYSTALS-KYBER for key encapsulation
 - N-representability constraint enforcement
-- 100% security enhancement over classical cryptographic schemes
-- Fully compliant with NIST PQC standards (2024)
+- NIST PQC alignment is a target, not a current wallet property
 
 ---
 
@@ -382,7 +381,7 @@ The 13th Chamber framework has demonstrated proof-of-concept quantum cryptanalys
 | 2033–2035 | 64–128 bit extraction | Realistic |
 | 2040–2045 | 256-bit full extraction | Theoretical |
 
-This capability demonstrates why post-quantum security is essential—and why 13th Chamber Quantum Crypto has implemented it from day one.
+This capability is why post-quantum security is on the roadmap. It is not implemented in the wallet today.
 
 ### **6.4 Energy Efficiency vs. Classical Mining**
 
@@ -445,13 +444,11 @@ Joseph Cyril Dougherty's Quantum Production Hub provides:
 - WebSocket-based live status updates
 - Docker deployment support for production environments
 
-### **7.5 Decentralized Wallet with Quantum Entropy**
+### **7.5 Wallet**
 
-A quantum-entropy-secured wallet system:
-- Private keys generated using quantum measurement outcomes (true randomness)
-- 256-bit key generation via quantum circuit measurements
-- Post-quantum signature scheme (CRYSTALS-Dilithium)
-- Cross-platform support (web, desktop, mobile)
+The wallet holds Solana tokens. It is not quantum-proof.
+- Post-quantum signatures (CRYSTALS-Dilithium) and quantum-entropy key generation are roadmap and are not implemented
+- Cross-platform support (web, desktop, mobile) is planned
 
 ### **7.6 Quantum Drug Discovery Platform**
 
@@ -515,11 +512,11 @@ This mathematically proves that all mining operations produce genuine quantum co
 
 ### **9.1 Post-Quantum Cryptographic Layer**
 
-All 13th Chamber Quantum Crypto transactions are protected by:
+Roadmap only. These controls are not implemented in the wallet. Planned transaction protection:
 
 - **CRYSTALS-Dilithium** — NIST-standardized lattice-based digital signatures
 - **CRYSTALS-KYBER** — NIST-standardized lattice-based key encapsulation
-- **S-Corner Protocol** — Proprietary post-quantum authentication with 100% security enhancement
+- **S-Corner Protocol** — planned post-quantum authentication (roadmap, not implemented in the wallet)
 - **N-representability constraint enforcement** — Quantum state validation
 
 ### **9.2 Quantum Random Number Generation**

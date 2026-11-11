@@ -1,1 +1,22 @@
-{"name":"QSAM Quantum Token","symbol":"QSAM","mint":"5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x","supply":"350000000","decimals":9,"treasury":"2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff","blockchain":"solana","network":"mainnet-beta","description":"Quantum State Amplitude Modulation token"}
+{
+  "name": "QSAM Quantum Token",
+  "symbol": "QSAM",
+  "mint": "48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN",
+  "token_standard": "Token-2022",
+  "supply": "1000000000",
+  "decimals": 6,
+  "mint_authority": "revoked",
+  "freeze_authority": "revoked",
+  "launched_on": "pump.fun",
+  "website": "https://13thchamberllc.com/qryptocurrency/",
+  "treasury": "2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff",
+  "blockchain": "solana",
+  "network": "mainnet-beta",
+  "description": "Quantum System Access Module token. Canonical Solana Token-2022 mint. Post-quantum cryptography is roadmap and is not implemented in the wallet.",
+  "legacy": {
+    "label": "Non-canonical legacy mint. Do not use for listings.",
+    "mint": "5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x",
+    "supply": 350000000,
+    "decimals": 9
+  }
+}

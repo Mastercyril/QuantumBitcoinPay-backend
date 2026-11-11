@@ -2,16 +2,22 @@
 # QSAM/QBTC Token Submission Script
 # Push tokens to all crypto tracking platforms
 
-QSAM_MINT="5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x"       # ecosystem mint (treasury-held, 350M, 9 dec)
-QSAM_TRADING_MINT="48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN" # pump.fun trading mint (1B, 6 dec) — the listable one
+# Canonical QSAM: Token-2022, 6 decimals, 1,000,000,000 fixed supply,
+# mint and freeze authority revoked, launched on pump.fun.
+QSAM_MINT="48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN"
+# Non-canonical legacy mint (350M, 9 decimals). Do not submit this address.
+QSAM_LEGACY_MINT="5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x"
 QBTC_MINT="EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9"
 TREASURY="2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff"
-WEBSITE="https://13thchamberllc.com"
+WEBSITE="https://13thchamberllc.com/qryptocurrency/"
 GITHUB="https://github.com/Mastercyril/QuantumBitcoinPay-backend"
 
 echo "============================================"
 echo "QSAM/QBTC Token Submission Script"
 echo "============================================"
+echo "Website: $WEBSITE"
+echo "Canonical QSAM mint: $QSAM_MINT"
+echo "Legacy mint (do not submit): $QSAM_LEGACY_MINT"
 
 # 1. DexScreener (auto-indexes with liquidity)
 echo "[1] DexScreener: Auto-indexes once liquidity pool is created"

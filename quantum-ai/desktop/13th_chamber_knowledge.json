@@ -8,7 +8,7 @@
       "13thchamberinc.com",
       "quantumqsam.com",
       "quantumbitcoin.com",
-      "quantumbitcoinpay.com"
+      "qsam.13thchamberllc.com"
     ]
   },
   "proprietary_systems": {
@@ -59,8 +59,8 @@
     "ibm_comparison": "Outperforms DeepMind and all 2026 industry benchmarks"
   },
   "crypto_ecosystem": {
-    "QSAM_token": "QSAM - 1 QSAM = $0.0000001 USD. Initial wallet balance 5000 QSAM. Daily reward base 10 QSAM. Quantum multiplier 2.0x.",
-    "server": "quantumbitcoinpay.com Flask server on localhost:5050",
+    "QSAM_token": "Canonical QSAM mint 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN (Token-2022, 6 decimals, fixed 1,000,000,000). Legacy mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x is not canonical. Do not quote a hard-coded price. Initial wallet balance 5000 QSAM. Daily reward base 10 QSAM. Post-quantum cryptography is roadmap and is not implemented in the wallet.",
+    "server": "qsam.13thchamberllc.com Flask server on localhost:5050",
     "blockchain": "quantumpay.db SQLite blockchain, wallets synced via OneDrive"
   },
   "research": {

@@ -4,9 +4,12 @@
 **Project:** QSAM Quantum Token & QBTC Ecosystem  
 **Organization:** 13th Chamber LLC  
 **Founder:** Joseph Cyril Dougherty IV  
-**Primary Token Mint (QSAM):** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`  
+**Primary Token Mint (QSAM):** `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`  
+**Token standard:** Solana Token-2022, 6 decimals, fixed supply 1,000,000,000, mint and freeze authority revoked, launched on pump.fun  
+**Legacy mint (non-canonical, do not submit):** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x` (350,000,000 supply, 9 decimals)  
 **Companion Token Mint (QBTC):** `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9`  
-**Network:** Solana (SPL Standard)  
+**Website:** https://13thchamberllc.com/qryptocurrency/  
+**Network:** Solana  
 
 ---
 
@@ -16,16 +19,17 @@
 | :--- | :--- | :--- |
 | **Token Name** | QSAM Quantum Token | QBTC Quantum Bitcoin |
 | **Ticker Symbol** | QSAM | QBTC |
-| **Blockchain Network** | Solana (SPL Token) | Solana (SPL Token) |
-| **Mint / Contract Address** | `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x` | `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9` |
-| **Total Supply** | 350,000,000 QSAM (350M) | 21,000,000 QBTC (21M) |
-| **Max Supply** | 350,000,000 QSAM | 21,000,000 QBTC |
-| **Decimals** | 9 | 9 |
-| **Base / Launch Price** | $0.01 USD | $0.001 USD (Phase 1 Presale) |
+| **Blockchain Network** | Solana (Token-2022) | Solana (SPL Token) |
+| **Mint / Contract Address** | `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN` | `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9` |
+| **Total Supply** | 1,000,000,000 QSAM (fixed) | 21,000,000 QBTC (21M) |
+| **Max Supply** | 1,000,000,000 QSAM | 21,000,000 QBTC |
+| **Decimals** | 6 | 9 |
+| **Authorities** | Mint and freeze revoked | — |
+| **Launch** | pump.fun | — |
 | **Treasury Address** | `2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff` | `2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff` |
-| **Primary Website** | [13th Chamber Wix Hub](https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html) | [QuantumBitcoinPay Portal](https://quantumbitcoinpay.com) |
+| **Primary Website** | [Qryptocurrency](https://13thchamberllc.com/qryptocurrency/) | [QSAM portal](https://qsam.13thchamberllc.com) |
 | **GitHub Repository** | [QSAM Token Repo](https://github.com/Mastercyril/QSAM-quantum-token) | [Backend Repo](https://github.com/Mastercyril/QuantumBitcoinPay-backend) |
-| **Solana Explorer** | [Solscan Explorer](https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x) | [Solscan Explorer](https://solscan.io/token/EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9) |
+| **Solana Explorer** | [Solscan Explorer](https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN) | [Solscan Explorer](https://solscan.io/token/EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9) |
 | **Primary Contact** | Joseph Dougherty IV (`josephdougherty483@gmail.com`) | Joseph Dougherty IV (`josephdougherty483@gmail.com`) |
 
 ---
@@ -37,18 +41,22 @@ This section provides exact pre-filled responses ready to copy and paste directl
 ### Section 1: Basic Information
 - **Project Name:** QSAM Quantum Token
 - **Token Ticker / Symbol:** QSAM
-- **Asset Type:** Cryptocurrency / Token (SPL Standard)
+- **Asset Type:** Cryptocurrency / Token (Solana Token-2022)
 - **Blockchain / Platform:** Solana
-- **Contract / Mint Address:** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
-- **Decimals:** 9
-- **Total Supply:** 350,000,000
-- **Max Supply:** 350,000,000
+- **Contract / Mint Address:** `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
+- **Decimals:** 6
+- **Total Supply:** 1,000,000,000
+- **Max Supply:** 1,000,000,000
+- **Mint authority:** revoked
+- **Freeze authority:** revoked
+- **Launch venue:** pump.fun
 - **Project Launch Date:** August 2026
+- **Do not submit:** legacy mint `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
 
 ### Section 2: Project Media & Verification Links
-- **Official Website:** `https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html`
-- **Secondary Domains:** `https://quantumbitcoinpay.com`, `https://13thchamberinc.com`, `https://13thchamberllc.com`, `https://13thchamber.puter.site`
-- **Block Explorer URL:** `https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
+- **Official Website:** `https://13thchamberllc.com/qryptocurrency/`
+- **Secondary Domains:** `https://qsam.13thchamberllc.com`, `https://13thchamberinc.com`, `https://13thchamberllc.com`, `https://13thchamber.puter.site`
+- **Block Explorer URL:** `https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
 - **Source Code / Open Source Repository:** `https://github.com/Mastercyril/QSAM-quantum-token`
 - **Backend GitHub Repository:** `https://github.com/Mastercyril/QuantumBitcoinPay-backend`
 - **Official Logo Image (PNG):** `https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png`
@@ -58,7 +66,7 @@ This section provides exact pre-filled responses ready to copy and paste directl
 
 ### Section 3: Project Descriptions
 - **Short Description (under 250 characters):**  
-  QSAM is a quantum-native Solana SPL token backed by 13th Chamber LLC's 8 proprietary quantum systems and IBM Quantum hardware. Features 381x speedup, SCORE security, daily rewards (10 QSAM/day), and 5,000 QSAM Nexus Wallet welcome bonus.
+  QSAM is the canonical Solana Token-2022 utility token of 13th Chamber LLC. Fixed supply 1,000,000,000, 6 decimals, mint and freeze authority revoked, launched on pump.fun. Post-quantum cryptography for the wallet is roadmap and is not implemented.
 
 - **Detailed Technical & Project Description:**  
   QSAM (Quantum State Amplitude Modulation) is the primary utility token powering the 13th Chamber LLC quantum computing ecosystem on Solana. Designed by founder Joseph Cyril Dougherty IV, QSAM bridges real-world quantum hardware execution with decentralized Web3 incentives.
@@ -101,23 +109,24 @@ This section provides exact pre-filled responses ready to copy and paste directl
 - **Project Name:** QSAM Quantum Token
 - **Symbol / Ticker:** QSAM
 - **Platform:** Solana
-- **Token Standard:** SPL
-- **Detailed Contract Address:** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
-- **Decimals:** 9
+- **Token Standard:** Token-2022
+- **Detailed Contract Address:** `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
+- **Decimals:** 6
 - **Launch Date:** August 2026
-- **Base / Presale Launch Price:** $0.01 USD
+- **Launch venue:** pump.fun
+- **Mint authority / freeze authority:** revoked
 
 #### 3. Supply Metrics:
-- **Total Supply:** 350,000,000 QSAM
-- **Max Supply:** 350,000,000 QSAM
-- **Circulating Supply at Submission:** 70,000,000 QSAM (Includes 35M Community/Presale + 35M Ecosystem Initial Rewards & Wallet Reserves)
-- **Token Decimals:** 9
+- **Total Supply:** 1,000,000,000 QSAM
+- **Max Supply:** 1,000,000,000 QSAM
+- **Circulating Supply at Submission:** Read the live figure from the chain or DexScreener. Do not submit a hard-coded number.
+- **Token Decimals:** 6
 
 #### 4. Project Links & Media Assets:
-- **Website 1 (Primary Hub):** `https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html`
-- **Website 2 (Ecosystem Portal):** `https://quantumbitcoinpay.com`
+- **Website 1 (Primary):** `https://13thchamberllc.com/qryptocurrency/`
+- **Website 2 (Ecosystem Portal):** `https://qsam.13thchamberllc.com`
 - **Website 3 (Corporate):** `https://13thchamberinc.com`
-- **Block Explorer:** `https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
+- **Block Explorer:** `https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
 - **Source Code Repository:** `https://github.com/Mastercyril/QSAM-quantum-token`
 - **Project Whitepaper / Tech Spec:** `https://github.com/Mastercyril/QSAM-quantum-token/blob/main/QLink_Quantum_Awareness_Specification.md`
 - **Twitter / X:** `https://twitter.com/13thchamber`
@@ -125,7 +134,7 @@ This section provides exact pre-filled responses ready to copy and paste directl
 - **Logo Download URL:** `https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/logo.png`
 
 #### 5. Project Pitch & Unique Value Proposition (UVP):
-> QSAM is the world's first quantum-native SPL cryptocurrency token on Solana, created by 13th Chamber LLC (Joseph Cyril Dougherty IV). Backed by an 8-system quantum computing architecture and real-time execution on IBM Quantum processing units (`ibm_torino`, `ibm_sherbrooke`, `ibm_brisbane`), QSAM provides token holders direct utility across quantum computation submission, algorithmic reward distribution, and post-quantum SCORE security. Features include 381x quantum speedup validation, 50 patent claims, daily 10 QSAM user holding rewards, and 5,000 QSAM welcome bonuses on the Nexus Wallet.
+> QSAM is the canonical Solana Token-2022 utility token of 13th Chamber LLC (Joseph Cyril Dougherty IV). Fixed supply is 1,000,000,000 with 6 decimals. Mint authority and freeze authority are revoked, and the token launched on pump.fun. Post-quantum cryptography is on the roadmap and is not implemented in the Nexus Wallet.
 
 #### 6. Proof of Ownership & Verification Method:
 - **Verification Method:** On-chain signed transaction / GitHub commit on `Mastercyril/QSAM-quantum-token` / official domain meta-tag listing `josephdougherty483@gmail.com`.
@@ -134,7 +143,13 @@ This section provides exact pre-filled responses ready to copy and paste directl
 
 ## 🧮 Part 3: Detailed Tokenomics Breakdown & Distribution Schedule
 
-### QSAM Tokenomics (350,000,000 Total Supply)
+### Canonical QSAM
+
+Fixed supply of 1,000,000,000. Decimals: 6. Standard: Solana Token-2022. Mint authority revoked. Freeze authority revoked. Launched on pump.fun. Contract: `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`.
+
+The allocation table below describes the non-canonical legacy mint only (`5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`, 350,000,000 supply, 9 decimals). Do not submit it.
+
+### Legacy mint tokenomics (non-canonical — do not submit)
 
 ```
 ========================================================================================
@@ -181,8 +196,7 @@ TOTAL MAXIMUM SUPPLY                         : 350,000,000 QSAM
 | **Mint Address** | `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9` |
 | **Total Supply** | 21,000,000 QBTC (21M) |
 | **Decimals** | 9 |
-| **Presale Phase 1 Price** | $0.001 USD (30% Bonus, $50 minimum purchase) |
-| **Ecosystem Role** | Post-Quantum secured Store of Value mirroring Bitcoin supply cap with SCORE encryption protection. |
+| **Ecosystem Role** | Store of value with a 21,000,000 supply cap. Post-quantum cryptography is roadmap and is not implemented in the wallet. |
 
 ---
 
@@ -211,8 +225,8 @@ The QSAM token is intrinsically tied to 13th Chamber LLC's proprietary quantum i
 ### Verified Hardware Benchmarks
 - **Hardware Integration:** Real-time jobs executed on IBM Quantum processing units: `ibm_torino`, `ibm_sherbrooke`, `ibm_brisbane`.
 - **Speedup Factor:** **381x verified speedup** compared to classical simulation baselines.
-- **Intellectual Property:** Backed by a **50-claim patent portfolio** covering quantum error mitigation, quantum-secured data transport, and post-quantum tokenomics.
-- **Cryptographic Security:** 6-qubit SHA-256 analysis executed at 97.2% confidence for post-quantum threat evaluation.
+- **Intellectual Property:** Backed by a **50-claim patent portfolio** covering quantum error mitigation and data transport. Post-quantum cryptography is roadmap and is not implemented in the wallet.
+- **Cryptographic Security:** 6-qubit SHA-256 analysis executed at 97.2% confidence as a threat evaluation. That result is not post-quantum protection in the wallet.
 
 ---
 
@@ -233,24 +247,25 @@ To verify ownership of the QSAM token contract and listing requests:
 
 ### 1. Domain Verification
 `josephdougherty483@gmail.com` is listed as the administrative owner and author across:
-- `https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/aac9eb677_13th-chamber-wix-hub.html`
-- `https://quantumbitcoinpay.com`
+- `https://13thchamberllc.com/qryptocurrency/`
+- `https://qsam.13thchamberllc.com`
 - `https://13thchamber.puter.site`
 
 ### 2. GitHub Proof
 The repository `https://github.com/Mastercyril/QSAM-quantum-token` contains the explicit contract metadata, mint specification, and this listing document signed by Joseph Cyril Dougherty IV.
 
 ### 3. On-Chain Treasury Authority
-The Solana mint authority for QSAM (`5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`) and treasury account `2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff` are under direct control of 13th Chamber LLC.
+The canonical QSAM mint (`48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`) has mint authority and freeze authority revoked. The legacy mint (`5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`) is not the listing mint. Treasury account `2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff` is the 13th Chamber LLC treasury.
 
 ---
 
 ## 🎯 Part 7: DEX & Market Tracker Checklist
 
-- [x] **Solana SPL Mint Verified:** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
-- [x] **On-Chain Metaplex Metadata Complete:** Name, Symbol, Logo URI, Description attached to mint.
-- [x] **Solscan Explorer Indexing:** Verified on Solscan (`solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`).
-- [x] **Official Website Active:** Hosted on 13th Chamber Wix Hub & QuantumBitcoinPay.
+- [x] **Canonical Token-2022 mint:** `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN` (1,000,000,000 fixed, 6 decimals, authorities revoked, pump.fun)
+- [x] **Legacy mint (do not submit):** `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`
+- [x] **Solscan Explorer Indexing:** `https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN`
+- [x] **Official Website:** `https://13thchamberllc.com/qryptocurrency/`
+- [x] **Portal:** `https://qsam.13thchamberllc.com`
 - [x] **GitHub Repositories Public:** `Mastercyril/QSAM-quantum-token` & `Mastercyril/QuantumBitcoinPay-backend`.
 - [ ] **CoinGecko Form Submitted:** Ready for submission with data in Part 1.
 - [ ] **CoinMarketCap Form Submitted:** Ready for submission with data in Part 2.

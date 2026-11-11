@@ -91,7 +91,8 @@ File: [`platforms/qai-ghost-fingerprint-platform.html`](platforms/qai-ghost-fing
 
 | Token | Mint Address | Supply | Decimals |
 |-------|-------------|--------|----------|
-| QSAM | `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x` | 350,000,000 | 9 |
+| QSAM (canonical) | `48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN` | 1,000,000,000 | 6 |
+| QSAM legacy (do not list) | `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x` | 350,000,000 | 9 |
 | QBTC | `EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9` | 21,000,000 | 9 |
 
 ### Treasury Wallet
@@ -192,7 +193,8 @@ The proprietary relay that converts classical binary into quantum binary (qbis):
 | Resource | URL |
 |----------|-----|
 | Ghost Fingerprint Platform | [Live Platform](https://base44.app/api/apps/6a765d5a0efbaf8ac16cf7b2/files/mp/public/6a765d5a0efbaf8ac16cf7b2/212f4a863_qai-ghost-fingerprint-platform.html) |
-| Main Site | quantumbitcoinpay.com |
+| Website | https://13thchamberllc.com/qryptocurrency/ |
+| QSAM portal | https://qsam.13thchamberllc.com |
 | 13th Chamber | 13thchamberllc.com |
 | QAI Playground | 13thchamber.puter.site |
 | Ollama Model | ollama.com/josephdougherty483/qai2 |

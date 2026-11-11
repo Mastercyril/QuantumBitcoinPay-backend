@@ -1,8 +1,9 @@
 # QSAM/QBTC Multi-Chain Deployment Plan
 
 ## Current State
-- Solana mainnet: QSAM (350M) + QBTC (21M) — both live
-- QSAM mint: 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x (FIXED)
+- Solana mainnet: canonical QSAM (1,000,000,000, Token-2022, 6 decimals) + QBTC (21M)
+- Canonical QSAM mint: 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN (mint and freeze authority revoked, launched on pump.fun)
+- Legacy QSAM mint (non-canonical, do not list): 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x (350,000,000, 9 decimals)
 - QBTC mint: EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
 
 ## Multi-Chain Targets
@@ -52,7 +53,7 @@
    - Name: QSAM
    - Symbol: QSAM
    - Description: Quantum State Amplitude Modulation
-   - Supply: 350,000,000
+   - Supply: 1,000,000,000 (canonical mint already launched on pump.fun; do not create another QSAM)
 4. Create QBTC token with:
    - Name: QBTC
    - Symbol: QBTC

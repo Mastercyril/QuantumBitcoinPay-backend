@@ -108,7 +108,7 @@ backend = least_busy(provider.backends())
 ### Security Implications
 - **Threat Timeline**: Large-scale quantum computers 10+ years away
 - **Mitigation**: Development of quantum-resistant algorithms
-- **Post-Quantum Cryptography**: NIST-standardized algorithms (CRYSTALS-Dilithium, CRYSTALS-KYBER)
+- **Post-Quantum Cryptography (roadmap)**: NIST-standardized algorithms (CRYSTALS-Dilithium, CRYSTALS-KYBER) are not implemented in the wallet
 
 ### Energy Efficiency Benefits
 - **Quantum Advantage**: Reduced energy per hash operation

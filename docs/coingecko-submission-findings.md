@@ -10,7 +10,8 @@
 > - Market: pump.fun AMM, QSAM/SOL pair — https://dexscreener.com/solana/DmmDdbYs3SzWhopJ4D7kt3mpo6HV9u8B8vuk97YBcVQn
 > - Explorer: https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
 > - Already indexed on DexScreener and GeckoTerminal (CoinGecko's own DEX tracker).
-> - Website: https://13thchamberllc.com (Wix is a CoinGecko rejection reason — this site must move to Vercel before applying).
+> - Website: https://13thchamberllc.com/qryptocurrency/
+> - Portal (replaces the retired quantumbitcoinpay.com host): https://qsam.13thchamberllc.com
 > - Supply/price facts to pull live at submission time: https://api.dexscreener.com/latest/dex/tokens/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
 >
 > Naming correction: QSAM = "Quantum System Access Module" (per whitepaper v2.0). The description below says
@@ -31,23 +32,28 @@ https://partner.coingecko.com/request-form/coins/new
 | Listing Type | Active Listing |
 | Coin/Token Name | QSAM Quantum Token |
 | Coin/Token Symbol | QSAM |
-| Website URL | https://github.com/Mastercyril/QSAM-quantum-token |
+| Website URL | https://13thchamberllc.com/qryptocurrency/ |
 | Submitter Role | Founder |
-| Asset Type | Token (SPL on Solana) |
-| Contract Address | 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x |
-| Contract Decimal Places | 9 |
+| Asset Type | Token (Token-2022 on Solana) |
+| Contract Address | 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN |
+| Contract Decimal Places | 6 |
 
 ### Project Description (Third Person, 400+ chars)
-QSAM (Quantum Secure Authentication Matrix) is a quantum-backed SPL token on the Solana blockchain developed by 13th Chamber LLC. It serves as the native utility token for a quantum computing ecosystem that includes drug discovery simulations, a Universal Codex Calculator, quantum stock prediction, and quantum-resistant cryptographic operations. QSAM operates on a proof-of-quantum-work model where each classical bit is replaced with a quantum bit (qbis) using the formula θᵢ = bitᵢ × π/2 + gravitational_factor × π/8. The token has a fixed supply of 350 million with 9 decimals and was launched via fair distribution on Pump.fun. QSAM integrates with IBM Quantum hardware (ibm_torino 133-qubit Heron r1) and achieves 348x error suppression using SCORE-ESCORT+ architecture.
+QSAM (Quantum System Access Module) is the canonical Solana Token-2022 utility token of 13th Chamber LLC. Fixed supply is 1,000,000,000 with 6 decimals. Mint authority and freeze authority are revoked. The token launched on pump.fun. Contract: 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN. Post-quantum cryptography for the wallet is on the roadmap and is not implemented. Do not submit legacy mint 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x.
 
 ---
 
 ## Step 2: Supply Information (Prepared)
 
-### Token Supply
-- Max Supply: 350,000,000 QSAM
-- Total Supply: 350,000,000 QSAM
-- Circulating Supply: ~340,000,000 QSAM (350M minus 10M founder lockup)
+### Token Supply (canonical mint — submit these figures)
+- Max Supply: 1,000,000,000 QSAM
+- Total Supply: 1,000,000,000 QSAM
+- Decimals: 6
+- Mint authority: revoked
+- Freeze authority: revoked
+- Circulating supply: read it live at submission time. Do not submit a hard-coded number.
+
+The allocation tables below describe the non-canonical legacy mint (350,000,000 supply, 9 decimals, `5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x`). Do not submit them for the canonical token.
 
 ### Allocation 1 — Fair Launch / Public
 | Field | Value |
@@ -70,7 +76,7 @@ QSAM (Quantum Secure Authentication Matrix) is a quantum-backed SPL token on the
 | Owned By | Joseph Dougherty (13th Chamber LLC) |
 
 ### Additional Supply Information
-QSAM has a total supply of 350,000,000 tokens with 9 decimals. 97% was distributed via fair launch on Pump.fun with no lockup or vesting restrictions. The remaining 3% (10,000,000 QSAM) is allocated to the founder (Joseph Dougherty, 13th Chamber LLC) with a 12-month cliff followed by 48 months of linear vesting, with 0% released at TGE. No tokens were burned. Daily mining rewards of 10 QSAM per wallet are distributed from the fair launch allocation.
+Canonical QSAM has a fixed supply of 1,000,000,000 tokens with 6 decimals on Token-2022. Mint and freeze authority are revoked. It launched on pump.fun. The 350,000,000 / 9-decimal allocation notes in this section apply only to the legacy mint and must not be copied into the CoinGecko form.
 
 ---
 

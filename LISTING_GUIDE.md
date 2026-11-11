@@ -6,16 +6,20 @@
 - **Name:** QSAM Quantum Token
 - **Symbol:** QSAM
 - **Blockchain:** Solana (Mainnet)
-- **Mint Address:** 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
-- **Token Account:** 7h3rAWiyu3RshrvHQGgDyyS6t7u2BexzMmYwrPfFYrKC
-- **Supply:** 350,000,000 QSAM
-- **Decimals:** 9
-- **Price:** $0.01
+- **Mint Address:** 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
+- **Token Standard:** Solana Token-2022
+- **Supply:** 1,000,000,000 QSAM (fixed)
+- **Decimals:** 6
+- **Mint authority:** revoked
+- **Freeze authority:** revoked
+- **Launch:** pump.fun
+- **Legacy mint (non-canonical, do not submit):** 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x (350,000,000 supply, 9 decimals)
 - **Treasury:** 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
 - **Logo:** https://raw.githubusercontent.com/Mastercyril/QuantumBitcoinPay-backend/main/assets/qsam-logo.svg
-- **Website:** https://quantumbitcoinpay.com
+- **Website:** https://13thchamberllc.com/qryptocurrency/
+- **Portal:** https://qsam.13thchamberllc.com
 - **GitHub:** https://github.com/Mastercyril/QuantumBitcoinPay-backend
-- **Description:** Quantum State Amplitude Modulation token powered by IBM Quantum verified PoQW consensus. 1965x quantum advantage. CHSH S=2.781. Patent pending 50 claims.
+- **Description:** Quantum System Access Module token. Canonical Solana Token-2022 mint launched on pump.fun. Post-quantum cryptography is on the roadmap and is not implemented in the wallet.
 
 ### Quantum Bitcoin (QBTC)
 - **Name:** Quantum Bitcoin
@@ -24,11 +28,10 @@
 - **Mint Address:** EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
 - **Supply:** 21,000,000 QBTC
 - **Decimals:** 9
-- **Price:** $0.001 (Phase 1 Presale)
-- **Description:** Quantum Bitcoin powered by PoQW (Proof of Quantum Work). ASIC-resistant quantum mining with CHSH > 2.0 verification.
+- **Description:** Quantum Bitcoin on Solana. Post-quantum cryptography is on the roadmap and is not implemented in the wallet.
 
 ### Solana Explorer Links
-- QSAM: https://solscan.io/token/5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x
+- QSAM: https://solscan.io/token/48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN
 - QBTC: https://solscan.io/token/EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9
 - Treasury: https://solscan.io/account/2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff
 
@@ -49,14 +52,15 @@
 ### 4. Raydium Liquidity Pool
 - URL: https://raydium.io/liquidity/create
 - Requirements: 0.5+ SOL in treasury, token mint address, initial price
-- Create QSAM/SOL pool with 350K QSAM + 0.5 SOL
+- Create a QSAM/SOL pool using the canonical mint. Do not seed it with the legacy mint.
 
 ### 5. Pump.fun
 - URL: https://pump.fun
 - Status: Form filled, awaiting wallet signature
 
 ## Social/Community Links
-- Website: https://quantumbitcoinpay.com
+- Website: https://13thchamberllc.com/qryptocurrency/
+- Portal: https://qsam.13thchamberllc.com
 - GitHub: https://github.com/Mastercyril/QuantumBitcoinPay-backend
 - Notion: https://app.notion.com/p/cfff6070466c48ad90c9348073903c9b
 - QAI Playground: https://share.google/uKFs7Cu0OO8xHuqQ1
@@ -66,6 +70,6 @@
 - 8 proprietary quantum systems (QSAM, SCORE, ESCORT, QELS, CACP, CPAR, AQBB_v3, GEL)
 - IBM Quantum verified (ibm_torino 133q Heron r1)
 - 1965x total quantum advantage
-- Post-quantum security (S-Corner Protocol: CRYSTALS-Dilithium + KYBER)
+- Post-quantum cryptography (S-Corner Protocol, CRYSTALS-Dilithium, CRYSTALS-KYBER) is roadmap and is not implemented in the wallet
 - Universal Codex mathematical framework
 - Patent: 50 claims covering all systems

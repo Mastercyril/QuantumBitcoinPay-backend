@@ -5,10 +5,13 @@
 
 ## Token Status
 
-| Token | Symbol | Supply | Price | Mint Address | Network | Status |
-|-------|--------|--------|-------|-------------|---------|--------|
-| QSAM Quantum Token | QSAM | 350,000,000 | $0.01 | 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x | Solana Mainnet | LIVE |
-| Quantum Bitcoin | QBTC | 21,000,000 | $0.001 | EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9 | Solana Mainnet | LIVE |
+| Token | Symbol | Supply | Mint Address | Network | Status |
+|-------|--------|--------|-------------|---------|--------|
+| QSAM Quantum Token (canonical, Token-2022, 6 decimals, authorities revoked, pump.fun) | QSAM | 1,000,000,000 | 48YZxAUXFcEG14kEWHyBBaEx1gabprkXxQsz2ViuPZPN | Solana Mainnet | LIVE |
+| QSAM legacy (do not list, 9 decimals) | QSAM | 350,000,000 | 5nHg43TTkmCafvUPpjnvu57hWMRXUheN3CFdDuzdQM9x | Solana Mainnet | legacy |
+| Quantum Bitcoin | QBTC | 21,000,000 | EMzyVtLsjyzMztFHQ7wYTGM8ojSDQJzstjmRsitnt1F9 | Solana Mainnet | LIVE |
+
+Hard-coded token prices are omitted. Post-quantum cryptography for the wallet is roadmap and is not implemented. Website: https://13thchamberllc.com/qryptocurrency/
 
 **Treasury:** 2iG3NGn2pcRabznaU1ndC17JcQqewERhQL53G3Z5Suff  
 **SOL Balance:** 0.034 SOL (need 0.5+ for Raydium liquidity pool)
